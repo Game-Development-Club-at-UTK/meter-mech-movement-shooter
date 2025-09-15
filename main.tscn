@@ -1,3 +1,34 @@
-[gd_scene format=3 uid="uid://be1kb5ia2i85l"]
+[gd_scene load_steps=6 format=3 uid="uid://be1kb5ia2i85l"]
+
+[ext_resource type="Script" uid="uid://87bvej0nr8lc" path="res://src/main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bav5yuaqq6chj" path="res://player.tscn" id="1_ig7tw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+size = Vector3(20, 0, 20)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0xm2m"]
+size = Vector2(20, 20)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ig7tw"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_0xm2m")
+
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.17316, 0)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.870785, -0.0506333, 0.48905, -0.483297, 0.0945669, 0.870334, -0.0903157, -0.99423, 0.0578765, 0, 6.42872, 0)
+
+[node name="TestMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36131, -15.2885)
+mesh = SubResource("CapsuleMesh_ig7tw")
