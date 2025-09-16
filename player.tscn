@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bav5yuaqq6chj"]
+[gd_scene load_steps=6 format=3 uid="uid://bav5yuaqq6chj"]
 
 [ext_resource type="Script" uid="uid://j1oi3aheepws" path="res://src/player.gd" id="1_4flbx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4flbx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
+render_priority = 1
+no_depth_test = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_4flbx"]
+material = SubResource("StandardMaterial3D_4flbx")
+size = Vector3(0.3, 0.3, 1)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_4flbx")
@@ -17,3 +25,15 @@ mesh = SubResource("CapsuleMesh_4flbx")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.623222, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.569213, -0.623222, -1.06023)
+mesh = SubResource("BoxMesh_4flbx")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="FireCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -10)
+debug_shape_custom_color = Color(1, 0, 0, 1)
