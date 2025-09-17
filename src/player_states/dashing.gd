@@ -24,20 +24,20 @@ func on_enter(player: Player):
 	direction = Vector3()
 	should_exit = false
 
-	if Input.is_action_pressed("forward"):
-		direction += Vector3.FORWARD
 	if Input.is_action_pressed("back"):
 		direction += Vector3.BACK
 	if Input.is_action_pressed("left"):
 		direction += Vector3.LEFT
 	if Input.is_action_pressed("right"):
 		direction += Vector3.RIGHT
+	if Input.is_action_pressed("forward") or direction.length() == 0.0:
+		direction += Vector3.FORWARD
 	
 	direction = direction.normalized()
 	direction = direction.rotated(Vector3(0.0, 1.0, 0.0), player.rotation.y)
-	if direction.length() == 0.0:
-		should_exit = true
 	
+	assert(direction.length() != 0.0)
+
 	timer.start()
 	
 
