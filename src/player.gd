@@ -3,6 +3,7 @@ class_name Player
 
 
 @export var run_speed = 300.0
+@export var dash_speed = 1200.0
 @export var jump_force = 10.0
 @export var gravity = 30.0
 @export var mouse_sensitivity = 0.005
@@ -10,9 +11,11 @@ class_name Player
 @export var fire_rate = 0.1
 @export var damage = 2.0
 @export var heat_gain = 0.01
+@export var dash_length = 5.0
 
 static var GROUNDED_STATE = GroundedState.new()
 static var IN_AIR_STATE = InAirState.new()
+static var DASHING_STATE = DashingState.new()
 
 var health = max_health
 var heat = 0.0
@@ -24,6 +27,8 @@ func _ready():
 	add_child(GROUNDED_STATE)
 	IN_AIR_STATE.name = "InAirState"
 	add_child(IN_AIR_STATE)
+	DASHING_STATE.name = "DashingState"
+	add_child(DASHING_STATE)
 
 	current_state.on_enter(self)
 
