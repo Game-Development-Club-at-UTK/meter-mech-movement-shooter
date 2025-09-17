@@ -35,10 +35,14 @@ func on_enter(player: Player):
 	
 	direction = direction.normalized()
 	direction = direction.rotated(Vector3(0.0, 1.0, 0.0), player.rotation.y)
-	
 	assert(direction.length() != 0.0)
 
 	timer.start()
+
+	if player.heat < player.dash_heat_cost:
+		should_exit = true
+	else:
+		player.heat -= player.dash_heat_cost
 	
 
 
