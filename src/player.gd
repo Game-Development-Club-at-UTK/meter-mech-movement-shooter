@@ -10,8 +10,22 @@ class_name Player
 @export var fire_rate = 0.1
 @export var damage = 2.0
 @export var heat_gain = 0.01
+
+static var GROUNDED_STATE = GroundedState.new()
+static var IN_AIR_STATE = InAirState.new()
+
 var health = max_health
 var heat = 0.0
+var current_state: State = IN_AIR_STATE
+
+
+func _ready():
+	GROUNDED_STATE.name = "GroundedState"
+	add_child(GROUNDED_STATE)
+	IN_AIR_STATE.name = "InAirState"
+	add_child(IN_AIR_STATE)
+
+	current_state.on_enter(self)
 
 
 # It might be a good idea to replace most of this movement code with a state machine later on
@@ -28,27 +42,13 @@ func _physics_process(delta):
 	$Camera3D.rotation.x += view_velocity.y
 	$Camera3D.rotation.x = clampf ($Camera3D.rotation.x, -PI/2, PI/2)
 
-	var h_velocity = Vector3()
-
-	if Input.is_action_pressed("forward"):
-		h_velocity += Vector3.FORWARD
-	if Input.is_action_pressed("back"):
-		h_velocity += Vector3.BACK
-	if Input.is_action_pressed("left"):
-		h_velocity += Vector3.LEFT
-	if Input.is_action_pressed("right"):
-		h_velocity += Vector3.RIGHT
-	
-	h_velocity = h_velocity.normalized() * run_speed * delta
-	h_velocity = h_velocity.rotated(Vector3(0.0, 1.0, 0.0), rotation.y)
-	velocity.x = h_velocity.x
-	velocity.z = h_velocity.z
-	
-	if is_on_floor() and Input.is_action_pressed("jump"):
-		velocity.y = jump_force
-
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	# State machine
+	# Do movement logic depending on current state, and transition to new states under certain conditions
+	var new_state = current_state.proc(self, delta)
+	if new_state is State:
+		current_state.on_exit(self)
+		current_state = new_state
+		current_state.on_enter(self)
 
 	move_and_slide()
 
