@@ -4,10 +4,15 @@ class_name DashingState
 
 var start_pos: Vector3
 var direction: Vector3
+var timer: Timer
+var should_exit = false
 
 # Uuuuuhhhh add coyote time maybe???
 func proc(player: Player, delta):
-	if (player.position - start_pos).length() >= player.dash_length or direction.length() == 0.0:
+	if (player.position - start_pos).length() >= player.dash_length:
+		should_exit = true
+
+	if should_exit:
 		return player.IN_AIR_STATE
 	
 	player.velocity += direction * player.dash_speed * delta
@@ -17,6 +22,7 @@ func proc(player: Player, delta):
 func on_enter(player: Player):
 	start_pos = player.position
 	direction = Vector3()
+	should_exit = false
 
 	if Input.is_action_pressed("forward"):
 		direction += Vector3.FORWARD
@@ -29,4 +35,24 @@ func on_enter(player: Player):
 	
 	direction = direction.normalized()
 	direction = direction.rotated(Vector3(0.0, 1.0, 0.0), player.rotation.y)
-	print(direction)
+	if direction.length() == 0.0:
+		should_exit = true
+	
+	timer.start()
+	
+
+
+# Create a timer as a backup to exit the dashing state in case the player gets stuck
+func create_timer(player: Player):
+	timer = Timer.new()
+	timer.name = "DashTimer"
+	timer.timeout.connect(_on_timeout)
+	timer.one_shot = true
+	timer.wait_time = 100 * player.dash_length / player.dash_speed
+	add_child(timer)
+
+
+
+func _on_timeout():
+	should_exit = true
+

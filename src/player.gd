@@ -12,6 +12,7 @@ class_name Player
 @export var damage = 2.0
 @export var heat_gain = 0.01
 @export var dash_length = 5.0
+@export var dash_heat_cost = 0.2
 
 static var GROUNDED_STATE = GroundedState.new()
 static var IN_AIR_STATE = InAirState.new()
@@ -29,6 +30,7 @@ func _ready():
 	add_child(IN_AIR_STATE)
 	DASHING_STATE.name = "DashingState"
 	add_child(DASHING_STATE)
+	DASHING_STATE.create_timer(self)
 
 	current_state.on_enter(self)
 
