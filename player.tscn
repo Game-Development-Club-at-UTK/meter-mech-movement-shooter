@@ -16,6 +16,9 @@ size = Vector3(0.3, 0.3, 1)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_4flbx")
+run_speed = 600.0
+jump_force = 15.0
+gravity = 40.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_sh265")
