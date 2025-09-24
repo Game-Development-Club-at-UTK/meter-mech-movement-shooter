@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://duqt7yckrdkbo"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0120001
+offset_bottom = -7.776062
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -648.0
+offset_right = 64.0
+grow_vertical = 0
+fill_mode = 3
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -648.0
+grow_vertical = 0
+fill_mode = 3
+metadata/_edit_use_anchors_ = true

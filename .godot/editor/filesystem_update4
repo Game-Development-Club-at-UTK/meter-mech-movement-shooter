@@ -1,0 +1,5 @@
+res://scenes/UI.tscn
+res://player.tscn
+res://src/player.gd
+res://src/bullet.gd
+res://scenes/bullet.tscn
