@@ -14,9 +14,15 @@ var currentHeat = 0.0
 var isMovementInput = false
 var currentLookDirection = Vector3(0,0,0)
 @export var bullet_scene : PackedScene
+var frameTimer = 0.0
 
 # It might be a good idea to replace most of this movement code with a state machine later on
 func _physics_process(delta):
+	#tiemr management
+	frameTimer += delta
+	if frameTimer >= 1:
+		frameTimer = 0
+	
 	var view_velocity = -Input.get_last_mouse_velocity() * mouse_sensitivity * delta
 	rotation.y += view_velocity.x
 	$Camera3D.rotation.x += view_velocity.y
@@ -48,7 +54,7 @@ func _physics_process(delta):
 	
 	if is_on_floor() and Input.is_action_pressed("jump"):
 		velocity.y = jump_force
-		currentHeat += 50
+		currentHeat += 25
 
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -56,11 +62,15 @@ func _physics_process(delta):
 	move_and_slide()
 
 	#firing
-	if Input.is_action_just_pressed("fire1"):
-		currentLookDirection = ($Camera3D/lookPositionHint.global_position - $Camera3D.global_position).normalized()
-		self.add_child(bullet_scene.instantiate())
-		print("fired")
+	if Input.is_action_pressed("fire1"):
+		self.currentHeat -= 25.0 * delta
+		if (int(frameTimer * 60.0) % 5) == 0: #ensures we only fire every 3rd frame
+			currentLookDirection = ($Camera3D/lookPositionHint.global_position - $Camera3D.global_position).normalized()
+			self.add_child(bullet_scene.instantiate())
 
+	#venting
+	if Input.is_action_just_pressed("vent"):
+		pass
 
 	#heat bar management
 	if currentHeat > maxHeat:

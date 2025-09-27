@@ -16,7 +16,11 @@ panorama = ExtResource("3_h2yge")
 sky_material = SubResource("PanoramaSkyMaterial_1bvp3")
 
 [sub_resource type="Environment" id="Environment_7mycd"]
+background_mode = 2
 sky = SubResource("Sky_lquwl")
+ambient_light_source = 2
+ambient_light_color = Color(0.18717614, 0.18717614, 0.18717614, 1)
+ambient_light_sky_contribution = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
 size = Vector3(24, 0, 24)
