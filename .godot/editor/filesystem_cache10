@@ -1,7 +1,7 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1758745683
+::res://::1759041773
 icon.svg::CompressedTexture2D::1069940964557299922::1758583974::1758584047::1::::<><><>0<>0<>65b4ae87dc527e504ab9bc3f85ce2cab<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.tscn::PackedScene::2721460423667728635::1758726228::0::1::::<><><>0<>0<><>::uid://87bvej0nr8lc::::res://src/main.gd<>uid://bav5yuaqq6chj::::res://player.tscn<>uid://duqt7yckrdkbo::::res://scenes/UI.tscn<>uid://c0kqq7bnl2jes::::res://textures/dramatic-panorama-sky-with-cloud-on-sunrise-and-sunset-time-free-photo-1493148619.jpg<>uid://jorlhhp0rc5d::::res://textures/concrete1.png<>uid://ba23t0ng35gwf::::res://textures/concrete1N.png<>uid://dh1pjv7o7yvsq::::res://models/pipes_pipes1.png<>uid://c2rgt6wm7dfh0::::res://models/pipes_pipes1N.png
+main.tscn::PackedScene::2721460423667728635::1758944207::0::1::::<><><>0<>0<><>::uid://87bvej0nr8lc::::res://src/main.gd<>uid://bav5yuaqq6chj::::res://player.tscn<>uid://duqt7yckrdkbo::::res://scenes/UI.tscn<>uid://c0kqq7bnl2jes::::res://textures/dramatic-panorama-sky-with-cloud-on-sunrise-and-sunset-time-free-photo-1493148619.jpg<>uid://jorlhhp0rc5d::::res://textures/concrete1.png<>uid://ba23t0ng35gwf::::res://textures/concrete1N.png<>uid://dh1pjv7o7yvsq::::res://models/pipes_pipes1.png<>uid://c2rgt6wm7dfh0::::res://models/pipes_pipes1N.png
 player.tscn::PackedScene::2431638036581639799::1758740184::0::1::::<><><>0<>0<><>::uid://j1oi3aheepws::::res://src/player.gd<>uid://cv3fkdc1eb6sf::::res://scenes/bullet.tscn<>uid://b68hq7pmcvuiv::::res://models/hand_hand.png
 ::res://models/::1758738225
 hand.blend::PackedScene::1411481798752570553::1758738225::1758648235::0::::<><><>0<>0<>73d28ab2dcf70b46a8ccb8d4b77216b2<>::
@@ -12,6 +12,15 @@ pipes.blend::PackedScene::2340422874034934604::1758637016::1758636479::0::::<><>
 pipes.glb::PackedScene::5803038828616984340::1758636987::1758636990::1::::<><><>0<>0<>2cfc85016019e7a71f3654f7c537f542<>res://.godot/imported/pipes.glb-1f0f18d7089f3b4c9fb8ebcaa49c328c.scn::uid://dh1pjv7o7yvsq::::res://models/pipes_pipes1.png<>uid://c2rgt6wm7dfh0::::res://models/pipes_pipes1N.png
 pipes_pipes1.png::CompressedTexture2D::7705185758291646280::1758636499::1758636989::1::::<><><>0<>0<>bd82b1dfb661a1e858fc36d4a6df93e2<>res://.godot/imported/pipes_pipes1.png-55ee45d0d4e444d8c62e415a223625b4.s3tc.ctex::
 pipes_pipes1N.png::CompressedTexture2D::6703434462270547891::1758636499::1758636989::1::::<><><>0<>0<>b98aad509725174a6574bbc8c499bb45<>res://.godot/imported/pipes_pipes1N.png-b422ff69be498964d04a859e8731263c.s3tc.ctex::
+::res://noise/::1758944161
+clang.wav::AudioStreamWAV::9032132997603454886::1758944138::1758944161::1::::<><><>0<>0<>6dfac999227a9264c73fd582e64c23f7<>res://.godot/imported/clang.wav-3b9b748848bddf27b3613299c6deb670.sample::
+click.wav::AudioStreamWAV::4956474265940748946::1758944138::1758944161::1::::<><><>0<>0<>1228484aa7671200d418bfa3e95bae2c<>res://.godot/imported/click.wav-e8d0b8b743824b7dcac4d289ba6cecf3.sample::
+drill.wav::AudioStreamWAV::4533390931959443246::1758944138::1758944161::1::::<><><>0<>0<>c5f4b28e3b2bbce9c69446bc718b2c4e<>res://.godot/imported/drill.wav-2daf91377a894507a78a19126dcd1ed7.sample::
+jingle.wav::AudioStreamWAV::589767850822241175::1758944138::1758944161::1::::<><><>0<>0<>682449e1b5920ed5cc6ba8a2bed4090b<>res://.godot/imported/jingle.wav-95790709dcd3b73ca14d8e1357d12c87.sample::
+labelmaker.wav::AudioStreamWAV::170837441705137312::1758944138::1758944161::1::::<><><>0<>0<>e4bd1c7793591e8216abcc7f7957d6e7<>res://.godot/imported/labelmaker.wav-6388d8e7c6859d9df240f384509d8fd1.sample::
+pipecutter.wav::AudioStreamWAV::7059301003164331602::1758944138::1758944161::1::::<><><>0<>0<>d18f106727884339ebac2cfc3dffed75<>res://.godot/imported/pipecutter.wav-eae8b2c3b2ad6229ff526cb6b246be25.sample::
+spring.wav::AudioStreamWAV::1615229157968384801::1758944138::1758944161::1::::<><><>0<>0<>ca7af8b763dfb56d6c5fe57e56d3affc<>res://.godot/imported/spring.wav-3441cdf818d54423e23e279d6605d9bf.sample::
+tapemeasure.wav::AudioStreamWAV::1646773017556178704::1758944138::1758944161::1::::<><><>0<>0<>74fa7d525564c77db95644511d265ba4<>res://.godot/imported/tapemeasure.wav-92f80eb939a57d7fc2731eaf6601a49f.sample::
 ::res://scenes/::1758725683
 bullet.tscn::PackedScene::6304931265647838573::1758725683::0::1::::<><><>0<>0<><>::uid://cmqhnedfnpjd5::::res://src/bullet.gd
 UI.tscn::PackedScene::8597281000299640512::1758681376::0::1::::<><><>0<>0<><>::
