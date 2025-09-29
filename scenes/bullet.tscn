@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv3fkdc1eb6sf"]
+
+[ext_resource type="Script" uid="uid://cmqhnedfnpjd5" path="res://src/bullet.gd" id="1_mkf8s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkf8s"]
+shading_mode = 0
+albedo_color = Color(0.72275037, 0.36902148, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_h1aey"]
+material = SubResource("StandardMaterial3D_mkf8s")
+size = Vector2(0.2, 0.2)
+
+[node name="bullet" type="Node3D"]
+top_level = true
+script = ExtResource("1_mkf8s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_h1aey")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.72275037, 0.36902148, 0, 1)
