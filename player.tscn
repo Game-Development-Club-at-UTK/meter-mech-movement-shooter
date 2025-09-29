@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=26 format=4 uid="uid://bav5yuaqq6chj"]
 
 [ext_resource type="Script" uid="uid://j1oi3aheepws" path="res://src/player.gd" id="1_4flbx"]
@@ -563,3 +564,4 @@ skin = SubResource("Skin_q053b")
 libraries = {
 &"": SubResource("AnimationLibrary_jsonh")
 }
+
