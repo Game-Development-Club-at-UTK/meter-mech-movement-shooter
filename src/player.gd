@@ -3,6 +3,7 @@ class_name Player
 
 
 @export var run_speed = 300.0
+@export var dash_speed = 1200.0
 @export var jump_force = 10.0
 @export var gravity = 10.0
 @export var mouse_sensitivity = 0.002
