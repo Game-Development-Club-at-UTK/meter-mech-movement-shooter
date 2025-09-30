@@ -443,3 +443,5 @@ skeleton = NodePath("")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamWAV_5vw27")
 autoplay = true
+
+
