@@ -5,7 +5,7 @@ var lifetime = 120 #lifetime in frames
 
 func _ready():
 	self.position = $"..".global_position
-	selfVelocity = $"..".currentLookDirection * 20
+	selfVelocity = $"..".current_look_direction * 20
 	self.look_at(selfVelocity)
 	
 	print(selfVelocity)

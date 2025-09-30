@@ -22,8 +22,8 @@ func proc(player: Player, delta):
 	if not player.is_on_floor():
 		player.velocity.y -= player.gravity * delta
 	
-	if Input.is_action_just_pressed("dash"):
-		return player.DASHING_STATE
+	# if Input.is_action_just_pressed("dash"):
+	# 	return player.DASHING_STATE
 
 
 func on_enter(_player: Player):
