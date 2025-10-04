@@ -7,6 +7,10 @@ var direction: Vector3
 var timer: Timer
 var should_exit = false
 
+
+func _ready():
+	has_gravity = false
+
 # Uuuuuhhhh add coyote time maybe???
 func proc(player: Player, delta):
 	if (player.position - start_pos).length() >= player.dash_length:
@@ -17,6 +21,7 @@ func proc(player: Player, delta):
 	
 	player.velocity += direction * player.dash_speed * delta
 	player.velocity.y = 0.0
+	return
 
 
 func on_enter(player: Player):
@@ -59,4 +64,3 @@ func create_timer(player: Player):
 
 func _on_timeout():
 	should_exit = true
-
