@@ -21,7 +21,7 @@ func proc(player: Player, delta):
 	
 	player.velocity += direction * player.dash_speed * delta
 	player.velocity.y = 0.0
-	return
+	return super(player, delta)
 
 
 func on_enter(player: Player):

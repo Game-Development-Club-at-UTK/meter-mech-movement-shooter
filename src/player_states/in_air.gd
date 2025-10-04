@@ -1,4 +1,4 @@
-extends State
+extends WASDState
 class_name InAirState
 
 
