@@ -17,7 +17,10 @@ func proc(player: Player, delta):
 		should_exit = true
 
 	if should_exit:
-		return player.IN_AIR_STATE
+		if Input.is_action_pressed("jump"):
+			return player.ROLLING_STATE
+		else:
+			return player.IN_AIR_STATE
 	
 	player.velocity += direction * player.dash_speed * delta
 	player.velocity.y = 0.0

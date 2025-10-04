@@ -3,7 +3,7 @@ class_name Player
 
 
 @export var run_speed = 600.0
-@export var dash_speed = 2400.0
+@export var dash_speed = 1200.0
 @export var jump_force = 10.0
 @export var gravity = 20.0
 @export var mouse_sensitivity = 0.002
@@ -15,11 +15,13 @@ class_name Player
 @export var heat_loss = 5.0
 @export var dash_length = 5.0
 @export var dash_heat_cost = 0.2
+@export var roll_decel = 200.0
 @export var bullet_scene : PackedScene
 
 static var GROUNDED_STATE = GroundedState.new()
 static var IN_AIR_STATE = InAirState.new()
 static var DASHING_STATE = DashingState.new()
+static var ROLLING_STATE = RollingState.new()
 
 var health = max_health
 var heat = 0.0
@@ -36,6 +38,8 @@ func _ready():
 	DASHING_STATE.name = "DashingState"
 	add_child(DASHING_STATE)
 	DASHING_STATE.create_timer(self)
+	ROLLING_STATE.name = "RollingState"
+	add_child(ROLLING_STATE)
 
 	current_state.on_enter(self)
 
