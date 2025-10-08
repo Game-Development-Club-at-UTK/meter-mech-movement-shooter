@@ -49,6 +49,8 @@ func on_enter(player: Player):
 	timer.start()
 	cooldown.start()
 
+	player.heat += player.dash_heat_gain
+
 
 
 # Create timers for dash cooldown and as a backup to exit the dashing state in case the player gets stuck
