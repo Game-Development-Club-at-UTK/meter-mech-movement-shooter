@@ -15,6 +15,7 @@ class_name Player
 @export var heat_loss = 5.0
 @export var dash_length = 5.0
 @export var dash_heat_cost = 0.2
+@export var dash_cooldown = 0.5
 @export var roll_decel = 200.0
 @export var bullet_scene : PackedScene
 
@@ -37,7 +38,7 @@ func _ready():
 	add_child(IN_AIR_STATE)
 	DASHING_STATE.name = "DashingState"
 	add_child(DASHING_STATE)
-	DASHING_STATE.create_timer(self)
+	DASHING_STATE.create_timers(self)
 	ROLLING_STATE.name = "RollingState"
 	add_child(ROLLING_STATE)
 
