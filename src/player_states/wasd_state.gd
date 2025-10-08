@@ -1,3 +1,4 @@
+@abstract
 extends State
 class_name WASDState
 
@@ -22,7 +23,7 @@ func proc(player: Player, delta):
 		is_movement_input = true
 	
 	if is_movement_input:
-		player.heat += 10.0 * delta
+		player.heat += player.run_heat_gain * delta
 	
 	h_velocity = h_velocity.normalized() * player.run_speed * delta
 	h_velocity = h_velocity.rotated(Vector3(0.0, 1.0, 0.0), player.rotation.y)

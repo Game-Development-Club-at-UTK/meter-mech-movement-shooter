@@ -49,11 +49,6 @@ func on_enter(player: Player):
 	timer.start()
 	cooldown.start()
 
-	if player.heat < player.dash_heat_cost:
-		should_exit = true
-	else:
-		player.heat -= player.dash_heat_cost
-	
 
 
 # Create timers for dash cooldown and as a backup to exit the dashing state in case the player gets stuck

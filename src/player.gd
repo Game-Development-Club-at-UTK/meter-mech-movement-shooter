@@ -2,21 +2,27 @@ extends CharacterBody3D
 class_name Player
 
 
+@export_group("Movement")
 @export var run_speed = 600.0
-@export var dash_speed = 1200.0
 @export var jump_force = 10.0
 @export var gravity = 20.0
-@export var mouse_sensitivity = 0.002
-@export var max_health = 100.0
-@export var fire_rate = 0.1
-@export var damage = 2.0
-@export var heat_gain = 0.01
+@export_subgroup("Dashing")
+@export var dash_speed = 1200.0
+@export var dash_length = 5.0
+@export var dash_cooldown = 0.5
+@export_subgroup("Rolling")
+@export var roll_decel = 200.0
+
+@export_group("Heat")
 @export var max_heat = 100.0
 @export var heat_loss = 5.0
-@export var dash_length = 5.0
-@export var dash_heat_cost = 0.2
-@export var dash_cooldown = 0.5
-@export var roll_decel = 200.0
+@export var run_heat_gain = 10.0
+@export var jump_heat_gain = 15.0
+@export var dash_heat_gain = 25.0
+
+@export_group("", "")
+@export var mouse_sensitivity = 0.002
+@export var max_health = 100.0
 @export var bullet_scene : PackedScene
 
 static var GROUNDED_STATE = GroundedState.new()
@@ -75,10 +81,8 @@ func _physics_process(delta):
 	#heat bar management
 	if heat > max_heat:
 		print("overheating")
-		heat = max_heat
-	if heat < 0:
-		heat = 0
 	else:
 		heat -= heat_loss * delta
+	heat = clampf(heat, 0.0, max_heat)
 	$"../UI/ProgressBar".value = lerpf($"../UI/ProgressBar".value, heat, .2)
 	$"../UI/ProgressBar2".value = lerpf($"../UI/ProgressBar2".value, heat, .2)
