@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://be1kb5ia2i85l"]
+[gd_scene load_steps=29 format=4 uid="uid://be1kb5ia2i85l"]
 
 [ext_resource type="Script" uid="uid://87bvej0nr8lc" path="res://src/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bav5yuaqq6chj" path="res://player.tscn" id="1_ig7tw"]
@@ -22,8 +22,8 @@ ambient_light_source = 2
 ambient_light_color = Color(0.18717614, 0.18717614, 0.18717614, 1)
 ambient_light_sky_contribution = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
-size = Vector3(24, 0, 24)
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vw27"]
+size = Vector3(24, 0, 240)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
 albedo_texture = ExtResource("3_lquwl")
@@ -31,6 +31,13 @@ normal_enabled = true
 normal_texture = ExtResource("4_7mycd")
 uv1_scale = Vector3(0.125, 0.125, 0.125)
 uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_kek77"]
+material = SubResource("StandardMaterial3D_272bh")
+size = Vector3(24, 1, 240)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+size = Vector3(24, 0, 24)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5vw27"]
 material = SubResource("StandardMaterial3D_272bh")
@@ -241,11 +248,11 @@ environment = SubResource("Environment_7mycd")
 [node name="Ground" type="StaticBody3D" parent="map/grounds"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground"]
-shape = SubResource("BoxShape3D_ig7tw")
+shape = SubResource("BoxShape3D_5vw27")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-mesh = SubResource("BoxMesh_5vw27")
+mesh = SubResource("BoxMesh_kek77")
 skeleton = NodePath("../../..")
 
 [node name="Ground2" type="StaticBody3D" parent="map/grounds"]
@@ -304,7 +311,7 @@ mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
 [node name="Ground7" type="StaticBody3D" parent="map/grounds"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4, 12)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -34, 4, 12)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground7"]
 shape = SubResource("BoxShape3D_ig7tw")
@@ -315,7 +322,7 @@ mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
 [node name="Ground8" type="StaticBody3D" parent="map/grounds"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 4, -36)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -31, 4, -36)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground8"]
 shape = SubResource("BoxShape3D_ig7tw")
