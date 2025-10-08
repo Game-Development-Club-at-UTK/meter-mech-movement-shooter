@@ -7,6 +7,8 @@ func proc(player: Player, delta):
 		player.velocity.y = player.jump_force
 		player.heat += 15.0
 		return player.IN_AIR_STATE
+	player.velocity.x -= player.velocity.x * 0.25 * delta * 60 
+	player.velocity.z -= player.velocity.z * 0.25 * delta * 60
 
 	return super(player, delta)
 
