@@ -12,6 +12,7 @@ class_name Player
 @export var dash_cooldown = 0.5
 @export_subgroup("Rolling")
 @export var roll_decel = 200.0
+@export var roll_strafe = 200.0
 
 @export_group("Heat")
 @export var max_heat = 100.0
