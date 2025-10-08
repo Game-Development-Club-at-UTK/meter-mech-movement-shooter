@@ -28,7 +28,7 @@ func proc(player: Player, delta):
 	h_velocity = h_velocity.normalized() * player.run_speed * delta
 	h_velocity = h_velocity.rotated(Vector3(0.0, 1.0, 0.0), player.rotation.y)
 	# Only apply h_velocity if it is smaller than current horizontal velocity
-	if player.velocity.project(Vector3(1, 0, 1)).length() < h_velocity.length():
+	if (player.velocity - Vector3(0, player.velocity.y, 0)).length() < h_velocity.length():
 		player.velocity.x = h_velocity.x
 		player.velocity.z = h_velocity.z
 
