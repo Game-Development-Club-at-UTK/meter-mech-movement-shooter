@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://be1kb5ia2i85l"]
+[gd_scene load_steps=30 format=4 uid="uid://be1kb5ia2i85l"]
 
 [ext_resource type="Script" uid="uid://87bvej0nr8lc" path="res://src/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bav5yuaqq6chj" path="res://player.tscn" id="1_ig7tw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ba23t0ng35gwf" path="res://textures/concrete1N.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://dh1pjv7o7yvsq" path="res://models/pipes_pipes1.png" id="6_272bh"]
 [ext_resource type="Texture2D" uid="uid://c2rgt6wm7dfh0" path="res://models/pipes_pipes1N.png" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://b1ilos0bxe082" path="res://enemy_1.tscn" id="9_kek77"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1bvp3"]
 panorama = ExtResource("3_h2yge")
@@ -223,6 +224,8 @@ loop_mode = 1
 loop_end = 44100
 stereo = true
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_kek77"]
+
 [node name="main" type="Node3D"]
 script = ExtResource("1_0xm2m")
 
@@ -263,6 +266,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
+[node name="Ground11" type="StaticBody3D" parent="map/grounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -24)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground11"]
+shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_5vw27")
+skeleton = NodePath("../../..")
+
+[node name="Ground12" type="StaticBody3D" parent="map/grounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -24)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground12"]
+shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_5vw27")
+skeleton = NodePath("../../..")
+
 [node name="Ground3" type="StaticBody3D" parent="map/grounds"]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -12, 4, 0)
 
@@ -276,6 +301,7 @@ skeleton = NodePath("../../..")
 
 [node name="Ground4" type="StaticBody3D" parent="map/grounds"]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -12, 4, -24)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground4"]
 shape = SubResource("BoxShape3D_ig7tw")
@@ -297,13 +323,16 @@ mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
 [node name="Ground6" type="StaticBody3D" parent="map/grounds"]
-transform = Transform3D(1.3113416e-07, -1, 0, 1, 1.3113416e-07, 0, 0, 0, 1, 12, 0, -24)
+transform = Transform3D(1.3113416e-07, -1, 0, 1, 1.3113416e-07, 0, 0, 0, 1, 12, -17, -24)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground6"]
+visible = false
 shape = SubResource("BoxShape3D_ig7tw")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
 mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
@@ -326,22 +355,27 @@ shape = SubResource("BoxShape3D_ig7tw")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
 mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
 [node name="Ground9" type="StaticBody3D" parent="map/grounds"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 16.000002, -24)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground9"]
+visible = false
 shape = SubResource("BoxShape3D_ig7tw")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
 mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
 [node name="Ground10" type="StaticBody3D" parent="map/grounds"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 15.999999, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground10"]
 shape = SubResource("BoxShape3D_ig7tw")
@@ -352,7 +386,7 @@ mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
 [node name="pipes" type="Node3D" parent="map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 18)
 
 [node name="pipe1" type="Node3D" parent="map/pipes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -18)
@@ -443,3 +477,14 @@ skeleton = NodePath("")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamWAV_5vw27")
 autoplay = true
+
+[node name="CharacterBody3D" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("9_kek77")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6, 0, -23)
+target_node = NodePath("../movetarget")
+
+[node name="movetarget" type="Node3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 53, 0, -23)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(5.7000003, 0, 0, 0, 1, 0, 0, 0, 9.3, -1, 0, -24)
+navigation_mesh = SubResource("NavigationMesh_kek77")

@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://udy5tiri0730"
-valid=false
+path="res://.godot/imported/hand.blend-407356c2ce6c56d9fa81f186a7b619ee.scn"
 
 [deps]
 
 source_file="res://models/hand.blend"
+dest_files=["res://.godot/imported/hand.blend-407356c2ce6c56d9fa81f186a7b619ee.scn"]
 
 [params]
 
