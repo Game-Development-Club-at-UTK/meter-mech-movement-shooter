@@ -1,8 +1,9 @@
+Node3D
+AnimationTree
 AudioStreamPlayer3D
 NavigationRegion3D
 StaticBody3D
 Timer
-Node3D
 PhysicalBoneSimulator3D
 CollisionShape3D
 MeshInstance3D
@@ -11,5 +12,3 @@ CharacterBody3D
 AudioStreamPlayer
 OmniLight3D
 ProgressBar
-Control
-WorldEnvironment
