@@ -224,10 +224,7 @@ loop_end = 44100
 stereo = true
 
 [node name="main" type="Node3D"]
-
 script = ExtResource("1_0xm2m")
-
-[node name="GUI" parent="." instance=ExtResource("2_1bvp3")]
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.17316, 0)
@@ -446,3 +443,5 @@ skeleton = NodePath("")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamWAV_5vw27")
 autoplay = true
+
+
