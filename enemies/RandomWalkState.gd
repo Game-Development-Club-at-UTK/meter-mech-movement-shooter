@@ -1,4 +1,4 @@
-extends State
+extends enemyState
 @export var animPlayer : AnimationPlayer
 @export var animTree : AnimationTree
 @export var move_speed := 1.9
@@ -9,9 +9,11 @@ var target_rotation = Vector3.ZERO
 var reachedTarget : bool
 
 func enter():
-	print("Entering Random Walk State")
+	data = owner.data
 	reachedTarget = false
-	move_speed = owner.speed
+	move_speed = data.move_speed
+	owner.desiredPitch = 0
+	owner.desiredYaw = 0
 
 	#choose random patrol point in a radius of 100 units
 	#later, I should make the radius adjustable
@@ -34,9 +36,9 @@ func update(delta):
 		
 		#find whether we should rotate left or right for the smallest path
 		if(target_rotation.y < 0):
-			owner.rotation.y -= deg_to_rad(45) * delta #rotate 45 degrees per second
+			owner.rotation.y -= deg_to_rad(data.turn_rate) * delta #rotate 45 degrees per second
 		else:
-			owner.rotation.y += deg_to_rad(45) * delta #rotate 45 degrees per second
+			owner.rotation.y += deg_to_rad(data.turn_rate) * delta #rotate 45 degrees per second
 
 		#if we're close enough to the target angle, just go ahead and set it there.
 		if(abs(owner.rotation.y - target_rotation.y) < .2):

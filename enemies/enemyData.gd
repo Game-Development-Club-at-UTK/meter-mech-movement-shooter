@@ -5,3 +5,5 @@ class_name enemyData
 
 @export var move_speed : float
 @export var turn_rate : float #deg/s
+@export var maxYaw : float #degrees
+@export var maxPitch : float #degrees

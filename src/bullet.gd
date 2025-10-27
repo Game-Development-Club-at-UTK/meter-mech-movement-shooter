@@ -8,7 +8,7 @@ func _ready():
 	selfVelocity = $"..".currentLookDirection * 20
 	self.look_at(selfVelocity)
 	
-	print(selfVelocity)
+	#print(selfVelocity)
 
 func _process(delta):
 	lifetime -= 1

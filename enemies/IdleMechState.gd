@@ -1,23 +1,34 @@
-extends State
+extends enemyState
 @export var animPlayer : AnimationPlayer
 @export var animTree : AnimationTree
-var targetRotation
+
+var counter : float = 0
+var delay : float = 0
+
 func enter():
-	print("Entering Idle State")
-	
-	
+	data = owner.data
+	while false :
+		print("hahahaha")
 	
 
-func update(_delta):
-	var targetWorldLoc = owner.lookTargetNode.position
-	targetRotation = owner.transform.looking_at(targetWorldLoc, Vector3.UP).basis.get_euler()
+func update(delta):
+	#behavior: look around every few seconds
+	counter += delta
+	print(counter)
+	if(counter >= delay):
+		counter = 0
+		delay = randf_range(3,5)  #3 to 5 seconds, I hope
+		
+		owner.desiredYaw = randf_range(-data.maxYaw, data.maxYaw)
+		#owner.desiredPitch = randf_range(-data.maxPitch, data.maxPitch)
+		owner.desiredPitch = 0
+		owner.desiredRot = 0
+
+
 	
-	#var direction = (targetWorldLoc - self.global_transform.origin).normalized()
-	#var basis = Basis().looking_at(direction, Vector3.UP)
-	#owner.yaw = basis.get_rotation_quaternion().y
-	owner.yaw = rad_to_deg(owner.rotation.y + targetRotation.y)
-	owner.pitch = rad_to_deg(owner.rotation.z - targetRotation.z)
-	print(owner.yaw)
+	
+	
+	
 	
 	
 	

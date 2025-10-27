@@ -23,7 +23,7 @@ sky = SubResource("Sky_lquwl")
 ambient_light_source = 2
 ambient_light_color = Color(0.3403394, 0.3403393, 0.34033924, 1)
 ambient_light_sky_contribution = 0.0
-ambient_light_energy = 2.46
+ambient_light_energy = 16.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
 size = Vector3(24, 0, 24)
@@ -348,9 +348,11 @@ mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
 [node name="Ground8" type="StaticBody3D" parent="map/grounds"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 4, -36)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -12, -36)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground8"]
+visible = false
 shape = SubResource("BoxShape3D_ig7tw")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground8"]
@@ -478,14 +480,15 @@ skeleton = NodePath("")
 stream = SubResource("AudioStreamWAV_5vw27")
 autoplay = true
 
-[node name="CharacterBody3D" parent="." node_paths=PackedStringArray("lookTargetNode") instance=ExtResource("9_kek77")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -115, 0, -25)
-lookTargetNode = NodePath("../Player")
+[node name="lookAtMe!" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3, 2, -28)
 
-[node name="small_robot" parent="." node_paths=PackedStringArray("lookTargetNode") instance=ExtResource("10_4c57u")]
-transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 5, 0, -28)
+[node name="CharacterBody3D" parent="." node_paths=PackedStringArray("lookTargetNode") instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -3, 0, -24)
 randomWalk = false
 lookTargetNode = NodePath("../Player")
 
-[node name="lookAtMe!" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3, 2, -28)
+[node name="small_robot" parent="." node_paths=PackedStringArray("lookTargetNode") instance=ExtResource("10_4c57u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6274834, 0.008645939, -24.304655)
+randomWalk = false
+lookTargetNode = NodePath("../Player")

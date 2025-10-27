@@ -1,10 +1,11 @@
-[gd_scene load_steps=59 format=4 uid="uid://b1ilos0bxe082"]
+[gd_scene load_steps=65 format=4 uid="uid://b1ilos0bxe082"]
 
 [ext_resource type="Texture2D" uid="uid://cw7v7x5o660k" path="res://models/Large_mech/Material Base Color legal detailed.png" id="1_663o1"]
 [ext_resource type="Script" uid="uid://07hxa4iovka3" path="res://enemies/enemy_base.gd" id="1_ovk8a"]
 [ext_resource type="Texture2D" uid="uid://dlnxtpafn7rf5" path="res://models/Large_mech/textures/Material Roughness.png" id="2_ovk8a"]
+[ext_resource type="Resource" uid="uid://bidk1w1gwpqbe" path="res://enemies/large_mech_data.tres" id="2_tmlh8"]
 [ext_resource type="AudioStream" uid="uid://dqoavpwnfj1g5" path="res://noise/footsetp1.wav" id="5_sa1y5"]
-[ext_resource type="Script" uid="uid://l8qik63ipp0i" path="res://enemies/IdleMechState.gd" id="5_wswjf"]
+[ext_resource type="Script" uid="uid://d0n385678dw5d" path="res://enemies/AttackState.gd" id="5_tmlh8"]
 [ext_resource type="Script" uid="uid://bvubgd0yqms1j" path="res://enemies/RandomWalkState.gd" id="6_sa1y5"]
 [ext_resource type="Animation" uid="uid://5c8dok4fvt58" path="res://models/Large_mech/animations/aimOffset_y0_p1.res" id="6_tmlh8"]
 [ext_resource type="Animation" uid="uid://v1ojeyx3kjr8" path="res://models/Large_mech/animations/aimOffset_y0_p-1.res" id="7_ae3tr"]
@@ -14,6 +15,7 @@
 [ext_resource type="Animation" uid="uid://bi330par6ouly" path="res://models/Large_mech/animations/aimOffset_y-1_p0.res" id="11_qhs5x"]
 [ext_resource type="Animation" uid="uid://t7uumegswpy2" path="res://models/Large_mech/animations/aimOffset_y-1_p1.res" id="12_yppl1"]
 [ext_resource type="Animation" uid="uid://cwe0rnkpwgaiw" path="res://models/Large_mech/animations/aimOffset_y-1_p-1.res" id="13_36jlx"]
+[ext_resource type="Animation" uid="uid://c7lep5lqci7r5" path="res://models/Large_mech/animations/aimOffset2.res" id="16_ae3tr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3tlt"]
 resource_name = "Material"
@@ -595,6 +597,7 @@ tracks/11/use_blend = true
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3qw0x"]
 _data = {
 &"RESET": SubResource("Animation_1piqj"),
+&"aimOffset2": ExtResource("16_ae3tr"),
 &"aim_y-1_p-1": ExtResource("13_36jlx"),
 &"aim_y-1_p0": ExtResource("11_qhs5x"),
 &"aim_y-1_p1": ExtResource("12_yppl1"),
@@ -611,34 +614,53 @@ _data = {
 &"walk": SubResource("Animation_njeaq")
 }
 
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_io1w8"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:L_arm", "Armature/Skeleton3D:L_cannon", "Armature/Skeleton3D:R_arm", "Armature/Skeleton3D:R_cannon"]
+
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_tmlh8"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t811s"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qhs5x"]
+animation = &"aimOffset2"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_yppl1"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_t811s")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_qhs5x")
+blend_point_1/pos = 30.0
+min_space = 0.0
+max_space = 30.0
+value_label = "rotation"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mrl38"]
-animation = &"aim+p0_y1"
+animation = &"aim_y0_p1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0yr6a"]
 animation = &"idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bgww2"]
-animation = &"aim+p0_y-1"
+animation = &"aim_y0_p-1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gexry"]
-animation = &"aim_p-1_y-1"
+animation = &"aim_y-1_p-1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o1etf"]
-animation = &"aim+p0_y-1"
+animation = &"aim_y1_p0"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ye6u4"]
-animation = &"aim_p1_y-1"
+animation = &"aim_y1_p1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sw768"]
-animation = &"aim_p-1_y1"
+animation = &"aim_y1_p-1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7efjo"]
-animation = &"aim_p1_y1"
+animation = &"aim_y-1_p1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vd74g"]
-animation = &"aim_p-1_y0"
+animation = &"aim_y-1_p0"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_aw7j2"]
 auto_triangles = false
@@ -651,7 +673,7 @@ blend_point_2/pos = Vector2(0, -20)
 blend_point_3/node = SubResource("AnimationNodeAnimation_gexry")
 blend_point_3/pos = Vector2(-55, -20)
 blend_point_4/node = SubResource("AnimationNodeAnimation_o1etf")
-blend_point_4/pos = Vector2(55.21, 0)
+blend_point_4/pos = Vector2(55, 0)
 blend_point_5/node = SubResource("AnimationNodeAnimation_ye6u4")
 blend_point_5/pos = Vector2(55, 20)
 blend_point_6/node = SubResource("AnimationNodeAnimation_sw768")
@@ -714,33 +736,41 @@ states/idle/position = Vector2(386, 85)
 states/turn/node = SubResource("AnimationNodeAnimation_io1w8")
 states/turn/position = Vector2(607, 85)
 states/walk/node = SubResource("AnimationNodeAnimation_ytw28")
-states/walk/position = Vector2(446, 243)
+states/walk/position = Vector2(446, 244)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_t811s"), "idle", "turn", SubResource("AnimationNodeStateMachineTransition_qhs5x"), "turn", "idle", SubResource("AnimationNodeStateMachineTransition_yppl1"), "turn", "walk", SubResource("AnimationNodeStateMachineTransition_36jlx"), "walk", "turn", SubResource("AnimationNodeStateMachineTransition_pgyo5"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_lx2il"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_42s3s")]
-graph_offset = Vector2(41, 10)
+graph_offset = Vector2(-8, 40)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ugh6c"]
-graph_offset = Vector2(-413, 109)
-nodes/output/position = Vector2(680, -100)
+graph_offset = Vector2(-414.79297, 25.035477)
+nodes/output/position = Vector2(780, -80)
 "nodes/locomotion State Machine/node" = SubResource("AnimationNodeStateMachine_aw7j2")
 "nodes/locomotion State Machine/position" = Vector2(-360, -140)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_tmlh8")
 nodes/Add2/position = Vector2(300, -120)
 nodes/aimBlendSpace/node = SubResource("AnimationNodeBlendSpace2D_aw7j2")
-nodes/aimBlendSpace/position = Vector2(-40, 60)
-node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"locomotion State Machine", &"Add2", 1, &"aimBlendSpace"]
+nodes/aimBlendSpace/position = Vector2(-100, -20)
+"nodes/Add2 2/node" = SubResource("AnimationNodeAdd2_io1w8")
+"nodes/Add2 2/position" = Vector2(100, 120)
+nodes/BlendSpace1D/node = SubResource("AnimationNodeBlendSpace1D_yppl1")
+nodes/BlendSpace1D/position = Vector2(-300, 340)
+node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"locomotion State Machine", &"Add2", 1, &"Add2 2", &"Add2 2", 0, &"aimBlendSpace", &"Add2 2", 1, &"BlendSpace1D"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("eyePosition", "leftArmPos", "rightArmPos")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0, 0, 0)
 script = ExtResource("1_ovk8a")
+data = ExtResource("2_tmlh8")
+eyePosition = NodePath("mesh/Armature/Skeleton3D/torsoBoneAttachment/eyePosition")
+leftArmPos = NodePath("mesh/Armature/Skeleton3D/leftLowerArmBoneAttachment4")
+rightArmPos = NodePath("mesh/Armature/Skeleton3D/rightLowerArmBoneAttachment5")
 
-[node name="Large_mech_complete" type="Node3D" parent="."]
+[node name="mesh" type="Node3D" parent="."]
 
-[node name="Armature" type="Node3D" parent="Large_mech_complete"]
+[node name="Armature" type="Node3D" parent="mesh"]
 metadata/extras = {
 "ant_landscape": {}
 }
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Large_mech_complete/Armature"]
+[node name="Skeleton3D" type="Skeleton3D" parent="mesh/Armature"]
 bones/0/name = "root"
 bones/0/parent = -1
 bones/0/rest = Transform3D(0, 0, 1, 0, 0.99999994, 0, -1, 0, 0, 0, 0, 0)
@@ -752,7 +782,7 @@ bones/1/name = "torso"
 bones/1/parent = 0
 bones/1/rest = Transform3D(0.94747126, -0.31984094, 9.252562e-08, 0.31984094, 0.94747126, 3.1234165e-08, -9.7655324e-08, 1.7763568e-15, 1, 0, 3.6687813, 0)
 bones/1/enabled = true
-bones/1/position = Vector3(0, 3.6687813, 0)
+bones/1/position = Vector3(-1.12947376e-07, 3.6687813, 1.1641418e-14)
 bones/1/rotation = Quaternion(0, 0, 0, 1)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "L_shoulder"
@@ -774,7 +804,7 @@ bones/4/parent = 3
 bones/4/rest = Transform3D(-0.0026609895, 0.99988914, 0.01464787, -0.9838567, -0.005238845, 0.17888144, 0.17893834, -0.013935402, 0.9837616, -2.6077032e-08, 1.742724, 3.3527613e-08)
 bones/4/enabled = true
 bones/4/position = Vector3(-2.6077032e-08, 1.742724, 3.3527613e-08)
-bones/4/rotation = Quaternion(-0.068586186, -0.05843919, -0.7056312, 0.70282674)
+bones/4/rotation = Quaternion(-0.06858618, -0.058439203, -0.7056312, 0.70282674)
 bones/4/scale = Vector3(1, 0.99999994, 1)
 bones/5/name = "R_shoulder"
 bones/5/parent = 1
@@ -795,7 +825,7 @@ bones/7/parent = 6
 bones/7/rest = Transform3D(-0.0026609895, -0.99988914, -0.014647863, 0.9838567, -0.005238843, 0.1788814, -0.17893831, -0.013935395, 0.9837616, 2.7939677e-08, 1.7427244, 2.6077032e-08)
 bones/7/enabled = true
 bones/7/position = Vector3(2.7939677e-08, 1.7427244, 2.6077032e-08)
-bones/7/rotation = Quaternion(-0.06858618, 0.058439188, 0.7056312, 0.7028268)
+bones/7/rotation = Quaternion(-0.06858617, 0.058439195, 0.70563114, 0.70282686)
 bones/7/scale = Vector3(0.99999994, 0.99999994, 1)
 bones/8/name = "pelvis"
 bones/8/parent = 0
@@ -861,7 +891,7 @@ bones/16/position = Vector3(-8.009374e-08, 1.2747498, 7.450581e-09)
 bones/16/rotation = Quaternion(-0.11277013, 5.7815345e-08, 0.041131902, 0.9927695)
 bones/16/scale = Vector3(1, 0.99999994, 1.0000001)
 
-[node name="body" type="MeshInstance3D" parent="Large_mech_complete/Armature/Skeleton3D"]
+[node name="body" type="MeshInstance3D" parent="mesh/Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_qh8ku")
 skin = SubResource("Skin_e17cd")
 metadata/extras = {
@@ -869,202 +899,187 @@ metadata/extras = {
 "booleans": {}
 }
 
-[node name="torsoBoneAttachment" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
-transform = Transform3D(0, 0, 1, 0, 0.99999994, 0, -1, 0, 0, 0, 3.668781, 0)
+[node name="torsoBoneAttachment" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
+transform = Transform3D(-9.765531e-08, 1.7763568e-15, 1, 0.31984088, 0.9474712, 3.1234162e-08, -0.94747126, 0.3198409, -9.25256e-08, 1.1641418e-14, 3.668781, 1.12947376e-07)
 bone_name = "torso"
 bone_idx = 1
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/torsoBoneAttachment"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/torsoBoneAttachment"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/torsoBoneAttachment/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/torsoBoneAttachment/StaticBody3D"]
 transform = Transform3D(0.89620423, 0.4436432, -4.1901416e-09, -0.44364333, 0.89620405, -2.829891e-08, -8.799205e-09, 2.722056e-08, 1, 0.35812545, 0.9811232, 3.4972857e-08)
 shape = SubResource("ConcavePolygonShape3D_ovk8a")
 
-[node name="pelvisBoneAttachment2" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
+[node name="eyePosition" type="Node3D" parent="mesh/Armature/Skeleton3D/torsoBoneAttachment"]
+
+[node name="pelvisBoneAttachment2" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
 transform = Transform3D(1.000002, -4.0233144e-07, 4.172325e-07, -2.2351786e-07, -0.937223, -0.348731, 4.768381e-07, 0.34873113, -0.93722284, 0, 3.668781, 0)
 bone_name = "pelvis"
 bone_idx = 8
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/pelvisBoneAttachment2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/pelvisBoneAttachment2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/pelvisBoneAttachment2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/pelvisBoneAttachment2/StaticBody3D"]
 transform = Transform3D(-5.855037e-06, -3.0324568e-06, 16.1233, -1.330122, -7.983225, -6.3044977e-06, 11.657869, -0.91085863, 6.609318e-06, -0.0019745554, 0.6425054, 0.116831064)
 shape = SubResource("ConcavePolygonShape3D_gqj32")
 
-[node name="leftShoulderBoneAttachment3" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
-transform = Transform3D(-0.013772293, -0.9998103, 0.013773917, -0.31967098, 0.01745486, 0.9473677, -0.9474284, 0.008644298, -0.31985077, -1.491375, 5.286212, -1.17999434e-07)
+[node name="leftShoulderBoneAttachment3" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
+transform = Transform3D(-0.013772385, -0.9998103, 0.013773886, 0.00014725284, 0.013773148, 0.99990505, -0.99990505, 0.013773096, -4.243978e-05, -1.491375, 5.2012506, 0.51732075)
 bone_name = "L_shoulder"
 bone_idx = 2
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/leftShoulderBoneAttachment3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/leftShoulderBoneAttachment3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/leftShoulderBoneAttachment3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/leftShoulderBoneAttachment3/StaticBody3D"]
 transform = Transform3D(0.32848072, 4.838235e-05, -0.004524379, -0.0045246202, 0.0045246533, -0.32844952, 1.3949846e-05, 0.3284804, 0.00452488, 0.009766877, 0.038977623, 0.00077342987)
 shape = SubResource("ConcavePolygonShape3D_wswjf")
 
-[node name="rightShoulderBoneAttachment4" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
-transform = Transform3D(-0.013772592, 0.9998103, -0.013773917, 0.319671, 0.01745492, 0.9473677, 0.94742846, 0.008644596, -0.3198507, 1.491375, 5.286212, 2.9681337e-07)
+[node name="rightShoulderBoneAttachment4" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
+transform = Transform3D(-0.0137725, 0.9998103, -0.013773949, -0.00014725371, 0.013773173, 0.999905, 0.9999051, 0.013773212, -4.237763e-05, 1.491375, 5.20125, 0.51732093)
 bone_name = "R_shoulder"
 bone_idx = 5
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/rightShoulderBoneAttachment4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/rightShoulderBoneAttachment4"]
 transform = Transform3D(0.32848075, 4.8382346e-05, -0.004524378, -0.00452462, 0.004524654, -0.3284495, 1.3949854e-05, 0.32848045, 0.004524881, 0.009766847, 0.038977504, 0.00077342987)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/rightShoulderBoneAttachment4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/rightShoulderBoneAttachment4/StaticBody3D"]
 transform = Transform3D(0.9999999, 2.910383e-11, 0, 0, 0.9999999, -2.8358045e-09, 0, 1.4169927e-09, 1.0000001, 0, -9.536743e-07, -4.7683716e-07)
 shape = SubResource("ConcavePolygonShape3D_wswjf")
 
-[node name="leftLowerArmBoneAttachment4" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
-transform = Transform3D(-0.015397492, 0.016353503, -0.9997477, -0.3242893, -0.9458998, -0.010478176, -0.94583255, 0.3240462, 0.01986774, -2.016852, 5.295386, 0.0045432025)
+[node name="leftLowerArmBoneAttachment4" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
+transform = Transform3D(-0.015397584, 0.016353533, -0.9997477, -0.0047389176, -0.9998561, -0.016282318, -0.9998702, 0.0044869888, 0.015472855, -2.016852, 5.208489, 0.52455956)
 bone_name = "L_arm"
 bone_idx = 3
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/leftLowerArmBoneAttachment4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/leftLowerArmBoneAttachment4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/leftLowerArmBoneAttachment4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/leftLowerArmBoneAttachment4/StaticBody3D"]
 transform = Transform3D(6.618939, -0.031370502, -0.10192846, -0.02970311, -6.6188464, 0.108256966, -0.102426976, -0.107785575, -6.618123, 0.087498486, 1.6020205, -0.001329422)
 shape = SubResource("ConcavePolygonShape3D_sa1y5")
 
-[node name="rightLowerArmBoneAttachment5" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
-transform = Transform3D(-0.015397794, -0.016353503, 0.9997477, 0.32428935, -0.9458998, -0.010478115, 0.9458326, 0.32404613, 0.019868039, 2.016852, 5.295386, 0.0045437505)
+[node name="rightLowerArmBoneAttachment5" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
+transform = Transform3D(-0.015397701, -0.01635347, 0.9997477, 0.0047389204, -0.99985605, -0.01628229, 0.99987024, 0.0044869273, 0.015472972, 2.016852, 5.208489, 0.5245598)
 bone_name = "R_arm"
 bone_idx = 6
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/rightLowerArmBoneAttachment5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/rightLowerArmBoneAttachment5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/rightLowerArmBoneAttachment5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/rightLowerArmBoneAttachment5/StaticBody3D"]
 transform = Transform3D(-6.618403, 0.09408037, -0.09829605, -0.0924857, -6.6182833, -0.107274465, -0.099798344, -0.1058785, 6.6181912, -0.07862452, 1.6010284, 0.011404395)
 shape = SubResource("ConcavePolygonShape3D_sa1y5")
 
-[node name="leftGunBoneAttachment6" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
-transform = Transform3D(-0.19494174, -0.001549596, -0.9808136, 0.9296179, -0.31915185, -0.18426208, -0.31274298, -0.9477022, 0.06365655, -1.9883523, 3.6469436, 0.56926626)
+[node name="leftGunBoneAttachment6" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
+transform = Transform3D(-0.19494176, -0.001549718, -0.9808136, 0.9808143, 0.0007266438, -0.19494303, 0.0010148967, -0.9999984, 0.0013783155, -1.9883523, 3.4660158, 0.53237915)
 bone_name = "L_cannon"
 bone_idx = 4
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/leftGunBoneAttachment6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/leftGunBoneAttachment6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/leftGunBoneAttachment6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/leftGunBoneAttachment6/StaticBody3D"]
 transform = Transform3D(1.1837162, 0.0002889256, 0.22527067, -0.00033204886, 1.2049615, 0.00019934552, -0.2252706, -0.00025790732, 1.1837157, -0.0029830933, 1.0941219, -0.00043845177)
 shape = SubResource("ConvexPolygonShape3D_3u0vs")
 
-[node name="rightGunBoneAttachment7" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
-transform = Transform3D(-0.1949417, 0.0015498977, 0.9808136, -0.9296179, -0.3191519, -0.18426198, 0.31274298, -0.9477023, 0.06365684, 1.9883523, 3.646943, 0.56926686)
+[node name="rightGunBoneAttachment7" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
+transform = Transform3D(-0.19494167, 0.0015498092, 0.9808136, -0.98081416, 0.0007264025, -0.19494298, -0.0010147393, -0.9999985, 0.0013784328, 1.9883523, 3.4660153, 0.5323793)
 bone_name = "R_cannon"
 bone_idx = 7
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/rightGunBoneAttachment7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/rightGunBoneAttachment7"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/rightGunBoneAttachment7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/rightGunBoneAttachment7/StaticBody3D"]
 transform = Transform3D(1.1837163, 0.00028892572, 0.22527063, -0.00033204886, 1.2049614, 0.0001993454, -0.22527055, -0.00025790744, 1.1837158, -0.0029830933, 1.094122, -0.00043857098)
 shape = SubResource("ConvexPolygonShape3D_3u0vs")
 
-[node name="leftUpperLegBoneAttachment8" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
+[node name="leftUpperLegBoneAttachment8" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
 transform = Transform3D(0.9451944, 0.020011457, 0.32590038, -0.16663268, -0.82879317, 0.53416806, 0.2807929, -0.55919707, -0.78003454, -1.1223102, 3.1142745, 0.20632629)
 bone_name = "L_upper_leg"
 bone_idx = 9
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/leftUpperLegBoneAttachment8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/leftUpperLegBoneAttachment8"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/leftUpperLegBoneAttachment8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/leftUpperLegBoneAttachment8/StaticBody3D"]
 transform = Transform3D(-0.27870047, 1.9680325, 0.17585187, 0.5571571, 0.029448988, 0.834215, 0.7725734, 0.6887162, -0.5381738, -0.0011036396, -0.0016541481, 0.0074335337)
 shape = SubResource("ConcavePolygonShape3D_3u0vs")
 
-[node name="rightUpperLegBoneAttachment9" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
+[node name="rightUpperLegBoneAttachment9" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
 transform = Transform3D(0.9451946, -0.02001206, -0.3258999, 0.16663194, -0.82879317, 0.5341684, -0.2807929, -0.5591971, -0.7800346, 1.1223097, 3.114275, 0.20632572)
 bone_name = "R_upper_leg"
 bone_idx = 13
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/rightUpperLegBoneAttachment9"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/rightUpperLegBoneAttachment9"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/rightUpperLegBoneAttachment9/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/rightUpperLegBoneAttachment9/StaticBody3D"]
 transform = Transform3D(0.28079277, -1.8275602, -0.16663194, 0.5591972, 0.038693797, 0.8287929, 0.7800344, 0.6301367, -0.53416806, 0.002015829, 0.0027627945, 0.0053292513)
 shape = SubResource("ConcavePolygonShape3D_q5scw")
 
-[node name="rightMiddleLegBoneAttachment10" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
+[node name="rightMiddleLegBoneAttachment10" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
 transform = Transform3D(0.9373375, -0.0086835325, -0.34831998, -0.25368434, -0.7022838, -0.6651631, -0.23884304, 0.7118443, -0.6604785, 1.105103, 2.4016693, -0.2744786)
 bone_name = "R_middle_leg"
 bone_idx = 14
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/rightMiddleLegBoneAttachment10"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/rightMiddleLegBoneAttachment10"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/rightMiddleLegBoneAttachment10/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/rightMiddleLegBoneAttachment10/StaticBody3D"]
 transform = Transform3D(0.23884298, 1.8123677, 0.25368434, -0.7118441, -0.016789857, 0.70228356, 0.6604784, -0.6734859, 0.665163, 0.0098053515, -0.0010032654, -0.018167019)
 shape = SubResource("ConcavePolygonShape3D_1piqj")
 
-[node name="leftMiddleLegBoneAttachment11" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
+[node name="leftMiddleLegBoneAttachment11" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
 transform = Transform3D(0.93733776, 0.008682966, 0.34831962, 0.25368372, -0.70228374, -0.66516334, 0.23884307, 0.71184427, -0.66047823, -1.105104, 2.4016685, -0.27447778)
 bone_name = "L_middle_leg"
 bone_idx = 10
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/leftMiddleLegBoneAttachment11"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/leftMiddleLegBoneAttachment11"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/leftMiddleLegBoneAttachment11/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/leftMiddleLegBoneAttachment11/StaticBody3D"]
 transform = Transform3D(0.2536837, -1.8123643, 0.23884311, -0.7022835, -0.016788634, 0.7118442, -0.6651633, -0.673484, -0.6604786, -0.011564344, -0.007768035, -0.01430881)
 shape = SubResource("ConcavePolygonShape3D_1piqj")
 
-[node name="leftLowerLegBoneAttachment12" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
+[node name="leftLowerLegBoneAttachment12" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
 transform = Transform3D(0.9397398, 0.0028168857, 0.34188437, -0.093489654, -0.9597378, 0.2648831, 0.32886478, -0.28088316, -0.9016386, -1.0977114, 1.8037639, 0.33156687)
 bone_name = "L_lower_leg"
 bone_idx = 11
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/leftLowerLegBoneAttachment12"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/leftLowerLegBoneAttachment12"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/leftLowerLegBoneAttachment12/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/leftLowerLegBoneAttachment12/StaticBody3D"]
 transform = Transform3D(-0.32886484, 1.8170137, 0.0934896, 0.28088325, 0.0054464033, 0.95973784, 0.90163904, 0.66104305, -0.264883, -0.024733424, -0.009200573, 0.0070720613)
 shape = SubResource("ConcavePolygonShape3D_jq6mw")
 
-[node name="rightLowerLegBoneAttachment13" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
+[node name="rightLowerLegBoneAttachment13" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
 transform = Transform3D(0.9397397, -0.0028175712, -0.34188426, 0.093489066, -0.959738, 0.26488343, -0.32886493, -0.28088334, -0.9016388, 1.09771, 1.8037641, 0.33156592)
 bone_name = "R_lower_leg"
 bone_idx = 15
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/rightLowerLegBoneAttachment13"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/rightLowerLegBoneAttachment13"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/rightLowerLegBoneAttachment13/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/rightLowerLegBoneAttachment13/StaticBody3D"]
 transform = Transform3D(0.36512297, 1.7915523, -0.090295, 0.26332563, -0.018869586, 0.9646581, 0.89294237, -0.72699964, -0.2475533, 0.024235845, -0.02199626, -0.0052901506)
 shape = SubResource("ConcavePolygonShape3D_jq6mw")
 
-[node name="leftFootBoneAttachment14" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
+[node name="leftFootBoneAttachment14" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
 transform = Transform3D(0.9395016, 0.002932176, 0.34253743, -0.012335198, -0.9990251, 0.042384386, 0.34232703, -0.04404524, -0.93854773, -1.0941207, 0.580338, -0.02648902)
 bone_name = "L_foot"
 bone_idx = 12
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/leftFootBoneAttachment14"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/leftFootBoneAttachment14"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/leftFootBoneAttachment14/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/leftFootBoneAttachment14/StaticBody3D"]
 transform = Transform3D(-0.34232712, 1.816552, 0.012335135, 0.044045385, 0.005669402, 0.9990254, 0.93854845, 0.66230506, -0.042384274, -0.030855417, -0.027494907, 0.0001245439)
 shape = SubResource("ConcavePolygonShape3D_o7p17")
 
-[node name="rightFootBoneAttachment15" type="BoneAttachment3D" parent="Large_mech_complete/Armature/Skeleton3D"]
+[node name="rightFootBoneAttachment15" type="BoneAttachment3D" parent="mesh/Armature/Skeleton3D"]
 transform = Transform3D(0.93950146, -0.002932854, -0.34253737, 0.012334586, -0.9990254, 0.04238464, -0.34232706, -0.044045344, -0.9385481, 1.0941182, 0.58033836, -0.026490033)
 bone_name = "R_foot"
 bone_idx = 16
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Large_mech_complete/Armature/Skeleton3D/rightFootBoneAttachment15"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh/Armature/Skeleton3D/rightFootBoneAttachment15"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_mech_complete/Armature/Skeleton3D/rightFootBoneAttachment15/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/Armature/Skeleton3D/rightFootBoneAttachment15/StaticBody3D"]
 transform = Transform3D(0.34767485, 1.8128738, -0.005805224, 0.052539334, -0.025715612, 0.99853086, 0.93614244, -0.6718416, -0.053884625, 0.026000857, -0.027335107, -0.01265192)
 shape = SubResource("ConcavePolygonShape3D_o7p17")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Large_mech_complete")
-libraries = {
-&"": SubResource("AnimationLibrary_3qw0x")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
-root_node = NodePath("../../Large_mech_complete")
-root_motion_track = NodePath("Armature/Skeleton3D:root")
-tree_root = SubResource("AnimationNodeBlendTree_ugh6c")
-advance_expression_base_node = NodePath("../..")
-anim_player = NodePath("..")
-parameters/Add2/add_amount = 1.0
-parameters/aimBlendSpace/blend_position = Vector2(0.8239708, 19.783783)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AnimationPlayer"]
-
 [node name="IdleState" type="Node3D" parent="." node_paths=PackedStringArray("animPlayer", "animTree")]
-script = ExtResource("5_wswjf")
+script = ExtResource("5_tmlh8")
 animPlayer = NodePath("../AnimationPlayer")
 animTree = NodePath("../AnimationPlayer/AnimationTree")
 
@@ -1074,3 +1089,23 @@ animPlayer = NodePath("../AnimationPlayer")
 animTree = NodePath("../AnimationPlayer/AnimationTree")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../mesh")
+root_motion_track = NodePath("Armature/Skeleton3D:root")
+libraries = {
+&"": SubResource("AnimationLibrary_3qw0x")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+root_node = NodePath("../../mesh")
+root_motion_track = NodePath("Armature/Skeleton3D:root")
+tree_root = SubResource("AnimationNodeBlendTree_ugh6c")
+advance_expression_base_node = NodePath("../..")
+anim_player = NodePath("..")
+parameters/Add2/add_amount = 1.0
+parameters/aimBlendSpace/blend_position = Vector2(0, 0)
+"parameters/Add2 2/add_amount" = 1.0
+parameters/BlendSpace1D/blend_position = 0.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AnimationPlayer"]

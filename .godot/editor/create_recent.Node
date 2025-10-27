@@ -1,4 +1,6 @@
+SpotLight3D
 Node3D
+BoneAttachment3D
 AnimationTree
 AudioStreamPlayer3D
 NavigationRegion3D
@@ -7,7 +9,6 @@ Timer
 PhysicalBoneSimulator3D
 CollisionShape3D
 MeshInstance3D
-BoneAttachment3D
 CharacterBody3D
 AudioStreamPlayer
 OmniLight3D
