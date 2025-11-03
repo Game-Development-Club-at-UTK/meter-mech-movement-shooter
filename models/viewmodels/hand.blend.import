@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://udy5tiri0730"
-valid=false
+path="res://.godot/imported/hand.blend-c0bd09257e717bdb49bbed3d35932772.scn"
 
 [deps]
 
-source_file="res://models/hand.blend"
+source_file="res://models/viewmodels/hand.blend"
+dest_files=["res://.godot/imported/hand.blend-c0bd09257e717bdb49bbed3d35932772.scn"]
 
 [params]
 
@@ -28,7 +29,7 @@ meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
-animation/fps=30
+animation/fps=24.0
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
