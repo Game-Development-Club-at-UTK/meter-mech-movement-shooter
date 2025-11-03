@@ -4,7 +4,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkf8s"]
 shading_mode = 0
-albedo_color = Color(0.72275037, 0.36902148, 0, 1)
+albedo_color = Color(0.72275, 0.369021, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_h1aey"]
 material = SubResource("StandardMaterial3D_mkf8s")
@@ -18,4 +18,4 @@ script = ExtResource("1_mkf8s")
 mesh = SubResource("QuadMesh_h1aey")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-light_color = Color(0.72275037, 0.36902148, 0, 1)
+light_color = Color(0.72275, 0.369021, 0, 1)
