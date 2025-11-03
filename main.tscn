@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://be1kb5ia2i85l"]
+[gd_scene load_steps=32 format=4 uid="uid://be1kb5ia2i85l"]
 
 [ext_resource type="Script" uid="uid://87bvej0nr8lc" path="res://src/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bav5yuaqq6chj" path="res://player.tscn" id="1_ig7tw"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://c2rgt6wm7dfh0" path="res://models/pipes_pipes1N.png" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://b1ilos0bxe082" path="res://enemies/enemy_1.tscn" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://uy84be7gghid" path="res://enemies/small_robot_enemy.tscn" id="10_4c57u"]
+[ext_resource type="ArrayMesh" uid="uid://d15qx2l0b6ma" path="res://models/Missile_mech/missile_support_mech_textures_baked_Cube_001.res" id="11_dg77c"]
+[ext_resource type="ArrayMesh" uid="uid://c8gfntpddtyup" path="res://models/spawner/spawner_truck_baked_Cube_009.res" id="12_ycdy4"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1bvp3"]
 panorama = ExtResource("3_h2yge")
@@ -485,10 +487,17 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3, 
 
 [node name="CharacterBody3D" parent="." node_paths=PackedStringArray("lookTargetNode") instance=ExtResource("9_kek77")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -3, 0, -24)
-randomWalk = false
 lookTargetNode = NodePath("../Player")
 
 [node name="small_robot" parent="." node_paths=PackedStringArray("lookTargetNode") instance=ExtResource("10_4c57u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6274834, 0.008645939, -24.304655)
 randomWalk = false
 lookTargetNode = NodePath("../Player")
+
+[node name="MissileSupportMechTexturesBakedCube001" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.653797, 0.028167602, -24.020538)
+mesh = ExtResource("11_dg77c")
+
+[node name="SpawnerTruckBakedCube009" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 22.415558, 0.43944383, -20.168755)
+mesh = ExtResource("12_ycdy4")
