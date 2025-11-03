@@ -1,9 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1762135010
+::res://::1762213078
 default_bus_layout.tres::AudioBusLayout/AudioBusLayout::5658097346427985153::1760931850::0::1::::<><><>0<>0<><>::
-enemy.gd::GDScript::2231492266900580487::1762134187::0::1::::<>CharacterBody3D<><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::1069940964557299922::1760931850::1760931850::1::::<><><>0<>0<>65b4ae87dc527e504ab9bc3f85ce2cab<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.tscn::PackedScene/PackedScene::2721460423667728635::1761608906::0::1::::<><><>0<>0<><>::uid://87bvej0nr8lc::::res://src/main.gd<>uid://bav5yuaqq6chj::::res://player.tscn<>uid://duqt7yckrdkbo::::res://scenes/UI.tscn
+main.tscn::PackedScene::2721460423667728635::1762212996::0::1::::<><><>0<>0<><>::uid://87bvej0nr8lc::::res://src/main.gd<>uid://bav5yuaqq6chj::::res://player.tscn<>uid://duqt7yckrdkbo::::res://scenes/UI.tscn<>uid://617l7pyduwex::::res://src/mob.gd
 player.tscn::PackedScene/PackedScene::2431638036581639799::1761580243::0::1::::<><><>0<>0<><>::uid://j1oi3aheepws::::res://src/player.gd<>uid://cv3fkdc1eb6sf::::res://scenes/bullet.tscn<>uid://e1n8lpbuafu0::::res://models/hand.png
 ::res://models/::1761605812
 hand.glb::PackedScene/PackedScene::7907717007886727963::1760931850::1760931850::1::::<><><>0<>0<>794db12df869b2fd7c052eb370a79758<>res://.godot/imported/hand.glb-38ed553e4ded1bdc2320dae14756787f.scn::uid://b68hq7pmcvuiv::::res://models/hand_hand.png
@@ -24,9 +23,10 @@ tapemeasure.wav::AudioStreamWAV/AudioStreamWAV::1646773017556178704::1760931850:
 ::res://scenes/::1761580585
 bullet.tscn::PackedScene/PackedScene::6304931265647838573::1761580585::0::1::::<><><>0<>0<><>::uid://cmqhnedfnpjd5::::res://src/bullet.gd
 UI.tscn::PackedScene/PackedScene::8597281000299640512::1761580585::0::1::::<><><>0<>0<><>::
-::res://src/::1761098661
+::res://src/::1762212977
 bullet.gd::GDScript/GDScript::5648585984350639440::1760931850::0::1::::<>Node3D<><>0<>0<><>::
 main.gd::GDScript/GDScript::2382390372000355764::1760931850::0::1::::<>Node3D<><>0<>0<><>::
+mob.gd::GDScript::2231492266900580487::1762212977::0::1::::<>CharacterBody3D<><>0<>0<><>::
 player.gd::GDScript/GDScript::686239209575187962::1760931850::0::1::::Player<>CharacterBody3D<><>0<>0<><>::
 ::res://src/player_states/::1761098661
 dashing.gd::GDScript/GDScript::1423296881770782657::1760931850::0::1::::DashingState<>State<><>0<>0<><>::

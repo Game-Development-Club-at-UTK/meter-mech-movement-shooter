@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://87bvej0nr8lc" path="res://src/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bav5yuaqq6chj" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://duqt7yckrdkbo" path="res://scenes/UI.tscn" id="3_5vw27"]
-[ext_resource type="Script" uid="uid://617l7pyduwex" path="res://enemy.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://617l7pyduwex" path="res://src/mob.gd" id="4_1bvp3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1bvp3"]
 
@@ -219,6 +219,7 @@ script = ExtResource("1_0xm2m")
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.17316, 0)
+wall_min_slide_angle = 0.262093
 
 [node name="UI" parent="." instance=ExtResource("3_5vw27")]
 
@@ -435,15 +436,10 @@ skeleton = NodePath("")
 stream = SubResource("AudioStreamWAV_5vw27")
 autoplay = true
 
-[node name="Enemy" type="CharacterBody3D" parent="."]
+[node name="mob" type="CharacterBody3D" parent="."]
 script = ExtResource("4_1bvp3")
-speed = null
-jump_vel = null
-detection_range = null
-attack_range = null
-rotation_speed = null
 
-[node name="CapsuleMesh" type="MeshInstance3D" parent="Enemy"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mob"]
+
+[node name="CapsuleMesh3d" type="MeshInstance3D" parent="mob"]
 mesh = SubResource("CapsuleMesh_lquwl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]

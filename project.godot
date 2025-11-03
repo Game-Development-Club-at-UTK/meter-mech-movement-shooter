@@ -71,10 +71,15 @@ renderer/rendering_method.ios="forward_plus"
 [xogot]
 
 project/editorState=[{
-"column": 8,
+"column": 0,
+"line": 0,
+"path": "res://src/player.gd",
+"type": "file"
+}, {
+"column": 0,
 "current": true,
-"line": 5,
-"path": "res://enemy.gd",
+"line": 36,
+"path": "res://src/mob.gd",
 "type": "file"
 }]
 project/breakpoints={}
