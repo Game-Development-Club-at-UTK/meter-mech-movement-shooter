@@ -1,1 +1,3 @@
 res://scenes/viewmodels.tscn
+res://src/viewmodels.gd
+res://player.tscn

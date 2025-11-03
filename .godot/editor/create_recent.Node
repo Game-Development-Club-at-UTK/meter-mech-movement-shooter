@@ -1,6 +1,12 @@
-Node3D
-AudioStreamPlayer
+AnimationPlayer
 OmniLight3D
+DirectionalLight3D
+Node3D
+BoneAttachment3D
+PhysicalBone3D
+Camera3D
+GPUParticles3D
+AudioStreamPlayer
 MeshInstance3D
 ProgressBar
 Control

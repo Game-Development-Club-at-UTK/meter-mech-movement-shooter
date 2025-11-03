@@ -2,24 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b68hq7pmcvuiv"
-path.s3tc="res://.godot/imported/hand_hand.png-fa4c140b1bba9d08598ff28fbf004655.s3tc.ctex"
+uid="uid://b322l6aelji7c"
+path="res://.godot/imported/136531_header.png-319553d4e230050e274c7b678590edaf.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
-generator_parameters={
-"md5": "0a36b121b1fcbf9db3fa46c2214b6d0a"
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/hand_hand.png"
-dest_files=["res://.godot/imported/hand_hand.png-fa4c140b1bba9d08598ff28fbf004655.s3tc.ctex"]
+source_file="res://models/viewmodels/136531_header.png"
+dest_files=["res://.godot/imported/136531_header.png-319553d4e230050e274c7b678590edaf.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -27,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -41,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
