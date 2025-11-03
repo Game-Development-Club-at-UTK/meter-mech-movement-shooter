@@ -1,3 +1,4 @@
-res://scenes/viewmodels.tscn
+res://models/viewmodels/armAnimation.res
+res://models/viewmodels/handAnimation.res
 res://src/viewmodels.gd
-res://player.tscn
+res://scenes/viewmodels.tscn
