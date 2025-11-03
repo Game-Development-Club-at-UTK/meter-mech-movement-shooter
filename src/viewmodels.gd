@@ -28,8 +28,8 @@ var currentWeaponAnimationPlayer
 
 func _ready():
 	
-	_equip_weapon(0,2)
-	_equip_weapon(1,4)
+	_equip_weapon(0,1)
+	_equip_weapon(1,7)
 	
 
 func _input(event: InputEvent) -> void:
@@ -43,14 +43,14 @@ func _input(event: InputEvent) -> void:
 	
 	if event is InputEventKey:
 		if event.keycode == KEY_1:
-			_play_weapon_animation(0,2,"tap")
-			_play_weapon_animation(1,4,"tap")
+			_play_weapon_animation(0,1,"tap")
+			_play_weapon_animation(1,7,"tap")
 		if event.keycode == KEY_2:
-			_play_weapon_animation(0,2,"hold")
-			_play_weapon_animation(1,4,"hold")
+			_play_weapon_animation(0,1,"hold")
+			_play_weapon_animation(1,7,"hold")
 		if event.keycode == KEY_3:
-			_play_weapon_animation(0,2,"release")
-			_play_weapon_animation(1,4,"release")
+			_play_weapon_animation(0,1,"release")
+			_play_weapon_animation(1,7,"release")
 
 #for playing weapon animations. 
 #arm idx is 0-3, weaponIdx is 0-10, inputType is string "tap" "hold" "release"

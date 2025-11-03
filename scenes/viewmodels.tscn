@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dppmtrf053r3t" path="res://textures/viewmodels/plasticColor.png" id="3_hj47r"]
 [ext_resource type="Texture2D" uid="uid://t70hr6io0chv" path="res://textures/viewmodels/plasticN.png" id="4_xugkj"]
 [ext_resource type="Texture2D" uid="uid://oodu6snl7skl" path="res://textures/viewmodels/rubberColor.png" id="5_7137q"]
-[ext_resource type="Texture2D" uid="uid://e1n8lpbuafu0" path="res://models/viewmodels/hand.png" id="7_rksaa"]
+[ext_resource type="Texture2D" uid="uid://bc0l03fiv4w7a" path="res://models/viewmodels/hand.png" id="7_rksaa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5p0a"]
 resource_name = "metal"
