@@ -26,6 +26,8 @@ var currentHand
 var currentBoneAttachment
 var currentWeaponAnimationPlayer
 
+
+
 func _ready():
 	
 	_equip_weapon(0,1)
@@ -38,7 +40,7 @@ func _input(event: InputEvent) -> void:
 			pass
 		elif event.keycode == KEY_Q:
 			pass
-	
+
 	
 	
 	if event is InputEventKey:

@@ -52,3 +52,5 @@ res://main.tscn
 res://enemies/enemy_1.tscn
 res://enemies/AttackState.gd
 res://enemies/RandomWalkState.gd
+res://scenes/viewmodels.tscn
+res://src/viewmodels.gd
