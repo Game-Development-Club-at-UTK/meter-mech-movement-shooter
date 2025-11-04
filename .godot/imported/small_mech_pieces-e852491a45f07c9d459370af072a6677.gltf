@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v4.5.47",
+		"generator":"Khronos glTF Blender I/O v4.5.48",
 		"version":"2.0"
 	},
 	"extensionsUsed":[
@@ -29,8 +29,7 @@
 	"scenes":[
 		{
 			"extras":{
-				"univ_settings":{},
-				"ps_scene_data":{}
+				"univ_settings":{}
 			},
 			"name":"Scene",
 			"nodes":[
