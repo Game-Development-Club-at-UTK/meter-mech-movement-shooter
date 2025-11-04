@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="enemyData" load_steps=2 format=3 uid="uid://bidk1w1gwpqbe"]
+
+[ext_resource type="Script" uid="uid://skr35wkl4rv4" path="res://enemies/enemyData.gd" id="1_ucdkk"]
+
+[resource]
+script = ExtResource("1_ucdkk")
+move_speed = 1.9
+turn_rate = 45.0
+maxYaw = 55.0
+maxPitch = 20.0
+metadata/_custom_type_script = "uid://skr35wkl4rv4"
