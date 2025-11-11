@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v4.5.48",
+		"generator":"Khronos glTF Blender I/O v4.5.47",
 		"version":"2.0"
 	},
 	"extensionsUsed":[
@@ -10,6 +10,9 @@
 	"scene":0,
 	"scenes":[
 		{
+			"extras":{
+				"ps_scene_data":{}
+			},
 			"name":"Scene",
 			"nodes":[
 				0,
@@ -62,6 +65,9 @@
 				"KHR_materials_ior":{
 					"ior":1.4500000476837158
 				}
+			},
+			"extras":{
+				"ps_mat_data":{}
 			},
 			"name":"Material",
 			"normalTexture":{

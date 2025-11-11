@@ -469,7 +469,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-26, 38)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6sfml"]
-graph_offset = Vector2(-524.5588, 96)
+graph_offset = Vector2(-379.03168, -32.930115)
 nodes/output/position = Vector2(680, -100)
 "nodes/locomotion State Machine/node" = SubResource("AnimationNodeStateMachine_aw7j2")
 "nodes/locomotion State Machine/position" = Vector2(-360, -140)
@@ -478,7 +478,7 @@ nodes/Add2/position = Vector2(300, -120)
 nodes/aimBlendSpace/node = SubResource("AnimationNodeBlendSpace2D_aw7j2")
 nodes/aimBlendSpace/position = Vector2(-300, 120)
 nodes/BlendSpace1D/node = SubResource("AnimationNodeBlendSpace1D_0sgsh")
-nodes/BlendSpace1D/position = Vector2(-100, 320)
+nodes/BlendSpace1D/position = Vector2(-140, 340)
 "nodes/Add2 2/node" = SubResource("AnimationNodeAdd2_irltg")
 "nodes/Add2 2/position" = Vector2(80, 100)
 node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"locomotion State Machine", &"Add2", 1, &"Add2 2", &"Add2 2", 0, &"aimBlendSpace", &"Add2 2", 1, &"BlendSpace1D"]

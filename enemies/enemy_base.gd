@@ -1,4 +1,5 @@
 extends CharacterBody3D
+
 @export var data : enemyData
 var target_position : Vector3
 @export var speed : float = 1.9
