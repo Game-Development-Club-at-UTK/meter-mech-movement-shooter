@@ -36,6 +36,7 @@ var heat = 0.0
 var frame_timer = 0.0
 var current_state: State = IN_AIR_STATE
 var current_look_direction = Vector3(0,0,0)
+var camera: Camera3D
 
 
 func _ready():

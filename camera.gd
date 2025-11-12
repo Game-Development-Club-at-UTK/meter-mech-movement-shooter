@@ -23,6 +23,7 @@ var noise_r: FastNoiseLite
 
 
 func _ready():
+	$"..".camera = self
 	noise_r = FastNoiseLite.new()
 	noise_r.noise_type = FastNoiseLite.TYPE_PERLIN
 	noise_y = noise_r.duplicate_deep()
@@ -34,7 +35,6 @@ func _ready():
 
 func _process(delta):
 	trauma = clampf(trauma, 0.0, 1.0)
-	print(trauma)
 	rotation = true_rotation
 
 	var shake = trauma * trauma
