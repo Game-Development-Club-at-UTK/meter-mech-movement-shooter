@@ -59,8 +59,8 @@ func _physics_process(delta):
 	
 	var view_velocity = -Input.get_last_mouse_velocity() * mouse_sensitivity * delta
 	rotation.y += view_velocity.x
-	$Camera3D.rotation.x += view_velocity.y
-	$Camera3D.rotation.x = clampf ($Camera3D.rotation.x, -PI/2, PI/2)
+	$Camera3D.true_rotation.x += view_velocity.y
+	$Camera3D.true_rotation.x = clampf ($Camera3D.true_rotation.x, -PI/2, PI/2)
 
 	# State machine
 	# Do movement logic depending on current state, and transition to new states under certain conditions
