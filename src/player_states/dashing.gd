@@ -43,9 +43,6 @@ func on_enter(player: Player):
 		direction += Vector3.FORWARD
 	
 	direction = direction.normalized()
-
-	player.camera.influence += direction * 0.5
-
 	direction = direction.rotated(Vector3(0.0, 1.0, 0.0), player.rotation.y)
 	assert(direction.length() != 0.0)
 
