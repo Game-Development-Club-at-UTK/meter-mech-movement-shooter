@@ -1,8 +1,9 @@
 Node3D
+BoneAttachment3D
+AnimationTree
 AnimationPlayer
 OmniLight3D
 DirectionalLight3D
-BoneAttachment3D
 PhysicalBone3D
 Camera3D
 GPUParticles3D
