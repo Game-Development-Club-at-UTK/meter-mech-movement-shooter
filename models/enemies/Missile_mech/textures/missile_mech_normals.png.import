@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyu1e4hhfq6ln"
-path.s3tc="res://.godot/imported/normals_1.png-e18205b37058f63f13a0c81cd61806d7.s3tc.ctex"
+path.s3tc="res://.godot/imported/missile_mech_normals.png-662b31963abdc3b1f336b66c70a87925.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/enemies/Missile_mech/textures/normals_1.png"
-dest_files=["res://.godot/imported/normals_1.png-e18205b37058f63f13a0c81cd61806d7.s3tc.ctex"]
+source_file="res://models/enemies/Missile_mech/textures/missile_mech_normals.png"
+dest_files=["res://.godot/imported/missile_mech_normals.png-662b31963abdc3b1f336b66c70a87925.s3tc.ctex"]
 
 [params]
 
