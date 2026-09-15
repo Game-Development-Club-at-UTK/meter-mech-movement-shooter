@@ -11,7 +11,39 @@
 				"automirror":{
 					"orientation":2
 				},
-				"univ_settings":{}
+				"univ_settings":{},
+				"wfc_props":{
+					"auto_save":1,
+					"copy_modifiers":0,
+					"remove_target_collection":1,
+					"link_objects":1,
+					"render_delay":0.0,
+					"prefs_migrated":1,
+					"collection_obj":{}
+				},
+				"td":{
+					"units":0,
+					"uv_space":"0",
+					"density":"0",
+					"texture_size":0,
+					"selected_faces":1,
+					"checker_method":1,
+					"checker_type":0,
+					"checker_uv_scale":"1.0",
+					"density_set":"1.28",
+					"set_method":0,
+					"rescale_anchor":0,
+					"select_mode":0,
+					"select_type":0,
+					"select_value":"1.0",
+					"select_threshold":"0.1",
+					"bake_vc_mode":0,
+					"bake_vc_auto_min_max":1,
+					"bake_vc_min_td":"0.64",
+					"bake_vc_max_td":"10.24",
+					"bake_vc_show_gradient":0,
+					"initialized":1
+				}
 			},
 			"name":"Scene",
 			"nodes":[
