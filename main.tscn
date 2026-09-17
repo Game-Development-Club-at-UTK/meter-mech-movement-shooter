@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://be1kb5ia2i85l"]
+[gd_scene format=4 uid="uid://be1kb5ia2i85l"]
 
 [ext_resource type="Script" uid="uid://87bvej0nr8lc" path="res://src/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bav5yuaqq6chj" path="res://player.tscn" id="1_ig7tw"]
@@ -226,221 +226,221 @@ loop_mode = 1
 loop_end = 44100
 stereo = true
 
-[node name="main" type="Node3D"]
+[node name="main" type="Node3D" unique_id=617463595]
 script = ExtResource("1_0xm2m")
 
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+[node name="Player" parent="." unique_id=1469683555 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.17316, 0)
 gravity = 30.0
 dash_speed = 800.0
 dash_length = 3.0
 
-[node name="UI" parent="." instance=ExtResource("3_5vw27")]
+[node name="UI" parent="." unique_id=1595546798 instance=ExtResource("3_5vw27")]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=763471587]
 transform = Transform3D(-4.371139e-08, -0.3420201, 0.93969274, 0, 0.93969256, 0.34202015, -1, 1.4950173e-08, -4.107527e-08, 0, 6, 0)
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1553452457]
 environment = SubResource("Environment_7mycd")
 
-[node name="map" type="Node3D" parent="."]
+[node name="map" type="Node3D" parent="." unique_id=1662497940]
 
-[node name="grounds" type="Node3D" parent="map"]
+[node name="grounds" type="Node3D" parent="map" unique_id=1929471207]
 
-[node name="Ground" type="StaticBody3D" parent="map/grounds"]
+[node name="Ground" type="StaticBody3D" parent="map/grounds" unique_id=31746434]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground" unique_id=988538726]
 shape = SubResource("BoxShape3D_ig7tw")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground" unique_id=1317062410]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
-[node name="Ground2" type="StaticBody3D" parent="map/grounds"]
+[node name="Ground2" type="StaticBody3D" parent="map/grounds" unique_id=1791404266]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground2" unique_id=2105777370]
 shape = SubResource("BoxShape3D_ig7tw")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground2"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground2" unique_id=1194065327]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
-[node name="Ground3" type="StaticBody3D" parent="map/grounds"]
+[node name="Ground3" type="StaticBody3D" parent="map/grounds" unique_id=1434049254]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -12, 4, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground3" unique_id=450434713]
 shape = SubResource("BoxShape3D_ig7tw")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground3"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground3" unique_id=949162917]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
-[node name="Ground4" type="StaticBody3D" parent="map/grounds"]
+[node name="Ground4" type="StaticBody3D" parent="map/grounds" unique_id=1100568259]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -12, 4, -24)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground4" unique_id=1631588890]
 shape = SubResource("BoxShape3D_ig7tw")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground4"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground4" unique_id=1638992859]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
-[node name="Ground5" type="StaticBody3D" parent="map/grounds"]
+[node name="Ground5" type="StaticBody3D" parent="map/grounds" unique_id=1669623620]
 transform = Transform3D(1.3113416e-07, -1, 0, 1, 1.3113416e-07, 0, 0, 0, 1, 12, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground5" unique_id=1191557232]
 shape = SubResource("BoxShape3D_ig7tw")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground5"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground5" unique_id=1258487618]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
-[node name="Ground6" type="StaticBody3D" parent="map/grounds"]
+[node name="Ground6" type="StaticBody3D" parent="map/grounds" unique_id=1735447921]
 transform = Transform3D(1.3113416e-07, -1, 0, 1, 1.3113416e-07, 0, 0, 0, 1, 12, 0, -24)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground6"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground6" unique_id=1279053113]
 shape = SubResource("BoxShape3D_ig7tw")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground6"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground6" unique_id=2101295436]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
-[node name="Ground7" type="StaticBody3D" parent="map/grounds"]
+[node name="Ground7" type="StaticBody3D" parent="map/grounds" unique_id=913694512]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4, 12)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground7"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground7" unique_id=1192438641]
 shape = SubResource("BoxShape3D_ig7tw")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground7"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground7" unique_id=1454587600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
-[node name="Ground8" type="StaticBody3D" parent="map/grounds"]
+[node name="Ground8" type="StaticBody3D" parent="map/grounds" unique_id=1279002103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground8"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/grounds/Ground8" unique_id=270932857]
 shape = SubResource("BoxShape3D_ig7tw")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground8"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="map/grounds/Ground8" unique_id=520703225]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_5vw27")
 skeleton = NodePath("../../..")
 
-[node name="pipes" type="Node3D" parent="map"]
+[node name="pipes" type="Node3D" parent="map" unique_id=365970600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
-[node name="pipe1" type="Node3D" parent="map/pipes"]
+[node name="pipe1" type="Node3D" parent="map/pipes" unique_id=190874218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -18)
 
-[node name="curve" type="MeshInstance3D" parent="map/pipes/pipe1"]
+[node name="curve" type="MeshInstance3D" parent="map/pipes/pipe1" unique_id=1500291743]
 transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9659258, 0, 12, 0)
 mesh = SubResource("ArrayMesh_4c57u")
 skeleton = NodePath("")
 
-[node name="long" type="MeshInstance3D" parent="map/pipes/pipe1"]
+[node name="long" type="MeshInstance3D" parent="map/pipes/pipe1" unique_id=936970885]
 mesh = SubResource("ArrayMesh_dg77c")
 skeleton = NodePath("")
 
-[node name="cap" type="MeshInstance3D" parent="map/pipes/pipe1"]
+[node name="cap" type="MeshInstance3D" parent="map/pipes/pipe1" unique_id=670080452]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
 mesh = SubResource("ArrayMesh_w48qg")
 skeleton = NodePath("")
 
-[node name="cap2" type="MeshInstance3D" parent="map/pipes/pipe1"]
+[node name="cap2" type="MeshInstance3D" parent="map/pipes/pipe1" unique_id=1698444746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 mesh = SubResource("ArrayMesh_w48qg")
 skeleton = NodePath("")
 
-[node name="pipe3" type="Node3D" parent="map/pipes"]
+[node name="pipe3" type="Node3D" parent="map/pipes" unique_id=1480332082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -14)
 
-[node name="curve" type="MeshInstance3D" parent="map/pipes/pipe3"]
+[node name="curve" type="MeshInstance3D" parent="map/pipes/pipe3" unique_id=1594541150]
 transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9659258, 0, 12, 0)
 mesh = SubResource("ArrayMesh_4c57u")
 skeleton = NodePath("")
 
-[node name="long" type="MeshInstance3D" parent="map/pipes/pipe3"]
+[node name="long" type="MeshInstance3D" parent="map/pipes/pipe3" unique_id=1746495286]
 mesh = SubResource("ArrayMesh_dg77c")
 skeleton = NodePath("")
 
-[node name="cap" type="MeshInstance3D" parent="map/pipes/pipe3"]
+[node name="cap" type="MeshInstance3D" parent="map/pipes/pipe3" unique_id=545074468]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
 mesh = SubResource("ArrayMesh_w48qg")
 skeleton = NodePath("")
 
-[node name="cap2" type="MeshInstance3D" parent="map/pipes/pipe3"]
+[node name="cap2" type="MeshInstance3D" parent="map/pipes/pipe3" unique_id=1708781296]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 mesh = SubResource("ArrayMesh_w48qg")
 skeleton = NodePath("")
 
-[node name="pipe2" type="Node3D" parent="map/pipes"]
+[node name="pipe2" type="Node3D" parent="map/pipes" unique_id=1367381193]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -21)
 
-[node name="cap" type="MeshInstance3D" parent="map/pipes/pipe2"]
+[node name="cap" type="MeshInstance3D" parent="map/pipes/pipe2" unique_id=1747839230]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 6, 0)
 mesh = SubResource("ArrayMesh_uur2r")
 skeleton = NodePath("")
 
-[node name="cap4" type="MeshInstance3D" parent="map/pipes/pipe2"]
+[node name="cap4" type="MeshInstance3D" parent="map/pipes/pipe2" unique_id=1674535729]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2, 0)
 mesh = SubResource("ArrayMesh_uur2r")
 skeleton = NodePath("")
 
-[node name="cap2" type="MeshInstance3D" parent="map/pipes/pipe2"]
+[node name="cap2" type="MeshInstance3D" parent="map/pipes/pipe2" unique_id=63897797]
 transform = Transform3D(-4.3711385e-08, -4.3711392e-08, 1, -1, -4.371139e-08, -4.371139e-08, 4.3711392e-08, -1, -4.371139e-08, 0, 9, -3)
 mesh = SubResource("ArrayMesh_uur2r")
 skeleton = NodePath("")
 
-[node name="cap3" type="MeshInstance3D" parent="map/pipes/pipe2"]
+[node name="cap3" type="MeshInstance3D" parent="map/pipes/pipe2" unique_id=483170582]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, -6)
 mesh = SubResource("ArrayMesh_uur2r")
 skeleton = NodePath("")
 
-[node name="short" type="MeshInstance3D" parent="map/pipes/pipe2"]
+[node name="short" type="MeshInstance3D" parent="map/pipes/pipe2" unique_id=4839896]
 mesh = SubResource("ArrayMesh_xnr6o")
 skeleton = NodePath("")
 
-[node name="curve" type="MeshInstance3D" parent="map/pipes/pipe2"]
+[node name="curve" type="MeshInstance3D" parent="map/pipes/pipe2" unique_id=2055261334]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 6, 0)
 mesh = SubResource("ArrayMesh_4c57u")
 skeleton = NodePath("")
 
-[node name="curve2" type="MeshInstance3D" parent="map/pipes/pipe2"]
+[node name="curve2" type="MeshInstance3D" parent="map/pipes/pipe2" unique_id=1629423139]
 transform = Transform3D(-4.371139e-08, 0, -1, 8.742278e-08, -1, -3.821371e-15, -1, -8.742278e-08, 4.371139e-08, 0, 12, -6)
 mesh = SubResource("ArrayMesh_4c57u")
 skeleton = NodePath("")
 
-[node name="curve3" type="MeshInstance3D" parent="map/pipes/pipe2"]
+[node name="curve3" type="MeshInstance3D" parent="map/pipes/pipe2" unique_id=550216712]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 12, -6)
 mesh = SubResource("ArrayMesh_4c57u")
 skeleton = NodePath("")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=233042184]
 stream = SubResource("AudioStreamWAV_5vw27")
 autoplay = true
 
-[node name="enemies" type="Node3D" parent="."]
+[node name="enemies" type="Node3D" parent="." unique_id=446042908]
 
-[node name="CharacterBody3D" parent="enemies" node_paths=PackedStringArray("lookTargetNode") instance=ExtResource("9_4c57u")]
+[node name="CharacterBody3D" parent="enemies" unique_id=1078610192 node_paths=PackedStringArray("lookTargetNode") instance=ExtResource("9_4c57u")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0, 0, -53)
 randomWalk = false
 lookTargetNode = NodePath("../../Player")
 
-[node name="small_robot" parent="enemies" node_paths=PackedStringArray("lookTargetNode") instance=ExtResource("10_efxa6")]
+[node name="small_robot" parent="enemies" unique_id=438010237 node_paths=PackedStringArray("lookTargetNode") instance=ExtResource("10_efxa6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -48)
 randomWalk = false
 lookTargetNode = NodePath("../../Player")
 
-[node name="CharacterBody3D" parent="." node_paths=PackedStringArray("lookTargetNode") instance=ExtResource("11_efxa6")]
+[node name="CharacterBody3D" parent="." unique_id=1643447705 node_paths=PackedStringArray("lookTargetNode") instance=ExtResource("11_efxa6")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 6, 0, -43)
 randomWalk = false
 lookTargetNode = NodePath("../Player")

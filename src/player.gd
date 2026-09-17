@@ -17,9 +17,9 @@ class_name Player
 @export_group("Heat")
 @export var max_heat = 100.0
 @export var heat_loss = 5.0
-@export var run_heat_gain = 10.0
-@export var jump_heat_gain = 15.0
-@export var dash_heat_gain = 25.0
+@export var run_heat_gain = -10.0
+@export var jump_heat_gain = -15.0
+@export var dash_heat_gain = -25.0
 
 @export_group("", "")
 @export var mouse_sensitivity = 0.002
@@ -74,7 +74,7 @@ func _physics_process(delta):
 
 	#firing
 	if Input.is_action_pressed("fire1"):
-		self.heat -= 25.0 * delta
+		self.heat += 25.0 * delta
 		if (int(frame_timer * 60.0) % 5) == 0: #ensures we only fire every 3rd frame
 			current_look_direction = ($Camera3D/lookPositionHint.global_position - $Camera3D.global_position).normalized()
 			self.add_child(bullet_scene.instantiate())
