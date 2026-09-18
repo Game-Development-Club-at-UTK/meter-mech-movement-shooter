@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmw5536csf7ca"
-path.s3tc="res://.godot/imported/roughness.png-f8be1b68a2e4146a5949f5d604d032c8.s3tc.ctex"
+path.s3tc="res://.godot/imported/roughness.png-073fea1268073bc14b3e14e20fdd27d5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/enemies/sparrow_drone/textures/roughness.png"
-dest_files=["res://.godot/imported/roughness.png-f8be1b68a2e4146a5949f5d604d032c8.s3tc.ctex"]
+source_file="res://content/art/textures/enemies/sparrow_drone/roughness.png"
+dest_files=["res://.godot/imported/roughness.png-073fea1268073bc14b3e14e20fdd27d5.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlnxtpafn7rf5"
-path.s3tc="res://.godot/imported/Material Roughness.png-8b49ca269b3e40d8dcff43fb858cbb2a.s3tc.ctex"
+path.s3tc="res://.godot/imported/Material Roughness.png-052941337cd9301e533a4fbcb16e318b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/enemies/Large_mech/textures/Material Roughness.png"
-dest_files=["res://.godot/imported/Material Roughness.png-8b49ca269b3e40d8dcff43fb858cbb2a.s3tc.ctex"]
+source_file="res://content/art/textures/enemies/large_mech/Material Roughness.png"
+dest_files=["res://.godot/imported/Material Roughness.png-052941337cd9301e533a4fbcb16e318b.s3tc.ctex"]
 
 [params]
 

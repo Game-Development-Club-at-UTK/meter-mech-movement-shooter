@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0kqq7bnl2jes"
-path.s3tc="res://.godot/imported/dramatic-panorama-sky-with-cloud-on-sunrise-and-sunset-time-free-photo-1493148619.jpg-541ef8766ef5da636f02e98912672e38.s3tc.ctex"
+path.s3tc="res://.godot/imported/dramatic-panorama-sky-with-cloud-on-sunrise-and-sunset-time-free-photo-1493148619.jpg-da06f13e3f410883cd79c352c4c7b3a5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/dramatic-panorama-sky-with-cloud-on-sunrise-and-sunset-time-free-photo-1493148619.jpg"
-dest_files=["res://.godot/imported/dramatic-panorama-sky-with-cloud-on-sunrise-and-sunset-time-free-photo-1493148619.jpg-541ef8766ef5da636f02e98912672e38.s3tc.ctex"]
+source_file="res://content/art/textures/environment/dramatic-panorama-sky-with-cloud-on-sunrise-and-sunset-time-free-photo-1493148619.jpg"
+dest_files=["res://.godot/imported/dramatic-panorama-sky-with-cloud-on-sunrise-and-sunset-time-free-photo-1493148619.jpg-da06f13e3f410883cd79c352c4c7b3a5.s3tc.ctex"]
 
 [params]
 

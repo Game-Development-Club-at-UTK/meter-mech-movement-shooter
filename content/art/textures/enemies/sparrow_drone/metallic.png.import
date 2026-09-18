@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d340s72x7q2vn"
-path="res://.godot/imported/metallic.png-93606ef1a03b18b8ddc681411bbb8974.ctex"
+path="res://.godot/imported/metallic.png-218bef4943a6004a52a78a8d6d1d0c1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/enemies/sparrow_drone/textures/metallic.png"
-dest_files=["res://.godot/imported/metallic.png-93606ef1a03b18b8ddc681411bbb8974.ctex"]
+source_file="res://content/art/textures/enemies/sparrow_drone/metallic.png"
+dest_files=["res://.godot/imported/metallic.png-218bef4943a6004a52a78a8d6d1d0c1a.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://berk67qwk6nl4"
-path="res://.godot/imported/metalHeightmap.png-fa24b3b78ba443f6ce96edb46300c826.ctex"
+path="res://.godot/imported/metalHeightmap.png-94dbea3c13d0b58456198850b7b7c421.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/viewmodels/metalHeightmap.png"
-dest_files=["res://.godot/imported/metalHeightmap.png-fa24b3b78ba443f6ce96edb46300c826.ctex"]
+source_file="res://content/art/textures/viewmodels/metalHeightmap.png"
+dest_files=["res://.godot/imported/metalHeightmap.png-94dbea3c13d0b58456198850b7b7c421.ctex"]
 
 [params]
 

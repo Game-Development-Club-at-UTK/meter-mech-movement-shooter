@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://usoel134ta1a"
-path="res://.godot/imported/Material Displacement.png-5a0dc48ab64f29aac15d31c9857ab66f.ctex"
+path="res://.godot/imported/Material Displacement.png-987e85439cbb4a8019b0c718d94dc01e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/enemies/Large_mech/textures/Material Displacement.png"
-dest_files=["res://.godot/imported/Material Displacement.png-5a0dc48ab64f29aac15d31c9857ab66f.ctex"]
+source_file="res://content/art/textures/enemies/large_mech/Material Displacement.png"
+dest_files=["res://.godot/imported/Material Displacement.png-987e85439cbb4a8019b0c718d94dc01e.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnroh0hkw7quu"
-path="res://.godot/imported/Material Base Color legal detailed.png-32664aad327f4be2ff3184e4cadd99a4.ctex"
+path="res://.godot/imported/Material Base Color legal detailed.png-044c3386202e3bf0e62a57c7f6bdf972.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/enemies/Large_mech/textures/Material Base Color legal detailed.png"
-dest_files=["res://.godot/imported/Material Base Color legal detailed.png-32664aad327f4be2ff3184e4cadd99a4.ctex"]
+source_file="res://content/art/textures/enemies/large_mech/Material Base Color legal detailed.png"
+dest_files=["res://.godot/imported/Material Base Color legal detailed.png-044c3386202e3bf0e62a57c7f6bdf972.ctex"]
 
 [params]
 

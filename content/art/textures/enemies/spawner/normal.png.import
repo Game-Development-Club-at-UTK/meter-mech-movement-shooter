@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcowdvwklxktf"
-path.s3tc="res://.godot/imported/normal.png-109a80169e1995c84f026e61cf692c85.s3tc.ctex"
+path.s3tc="res://.godot/imported/normal.png-7a2f85be0bcd603240b57e3f3a979b29.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/enemies/spawner/baked_textures/normal.png"
-dest_files=["res://.godot/imported/normal.png-109a80169e1995c84f026e61cf692c85.s3tc.ctex"]
+source_file="res://content/art/textures/enemies/spawner/normal.png"
+dest_files=["res://.godot/imported/normal.png-7a2f85be0bcd603240b57e3f3a979b29.s3tc.ctex"]
 
 [params]
 

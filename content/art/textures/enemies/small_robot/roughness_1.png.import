@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br3j0y02ionpd"
-path.s3tc="res://.godot/imported/roughness_1.png-82142b9d34b12e7c4c0fcf15a7dc1ed6.s3tc.ctex"
+path.s3tc="res://.godot/imported/roughness_1.png-186d4972614bfe926ba551923ba5f9c6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/enemies/small_robot/roughness_1.png"
-dest_files=["res://.godot/imported/roughness_1.png-82142b9d34b12e7c4c0fcf15a7dc1ed6.s3tc.ctex"]
+source_file="res://content/art/textures/enemies/small_robot/roughness_1.png"
+dest_files=["res://.godot/imported/roughness_1.png-186d4972614bfe926ba551923ba5f9c6.s3tc.ctex"]
 
 [params]
 

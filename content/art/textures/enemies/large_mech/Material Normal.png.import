@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvj0owsupki23"
-path.s3tc="res://.godot/imported/Material Normal.png-1f78d6af42a1998f1e9be19c89c3254b.s3tc.ctex"
+path.s3tc="res://.godot/imported/Material Normal.png-7e10e59c43939fe9ac0269216695cdae.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/enemies/Large_mech/textures/Material Normal.png"
-dest_files=["res://.godot/imported/Material Normal.png-1f78d6af42a1998f1e9be19c89c3254b.s3tc.ctex"]
+source_file="res://content/art/textures/enemies/large_mech/Material Normal.png"
+dest_files=["res://.godot/imported/Material Normal.png-7e10e59c43939fe9ac0269216695cdae.s3tc.ctex"]
 
 [params]
 

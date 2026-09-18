@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gaenro15vs4x"
-path="res://.godot/imported/metallic.png-21577f7b1c5e08c6fd9accba59ff6337.ctex"
+path="res://.godot/imported/metallic.png-8f85e10aba0cb4f938bac2947cd5cd5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/enemies/spawner/baked_textures/metallic.png"
-dest_files=["res://.godot/imported/metallic.png-21577f7b1c5e08c6fd9accba59ff6337.ctex"]
+source_file="res://content/art/textures/enemies/spawner/metallic.png"
+dest_files=["res://.godot/imported/metallic.png-8f85e10aba0cb4f938bac2947cd5cd5b.ctex"]
 
 [params]
 

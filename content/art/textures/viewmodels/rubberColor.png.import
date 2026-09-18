@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://oodu6snl7skl"
-path.s3tc="res://.godot/imported/rubberColor.png-450c3128581271e965abeb3cefe960c5.s3tc.ctex"
+path.s3tc="res://.godot/imported/rubberColor.png-ab061b290747d2f1c75fe3950ec13292.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/viewmodels/rubberColor.png"
-dest_files=["res://.godot/imported/rubberColor.png-450c3128581271e965abeb3cefe960c5.s3tc.ctex"]
+source_file="res://content/art/textures/viewmodels/rubberColor.png"
+dest_files=["res://.godot/imported/rubberColor.png-ab061b290747d2f1c75fe3950ec13292.s3tc.ctex"]
 
 [params]
 

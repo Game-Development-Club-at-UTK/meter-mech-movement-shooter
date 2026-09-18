@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0ikq2b1lqp4u"
-path.s3tc="res://.godot/imported/Large_mech_complete_Material Metallic-Material Roughness.png-f5cee3e53e684d2bf49919f92b7712f8.s3tc.ctex"
+path.s3tc="res://.godot/imported/Large_mech_complete_Material Metallic-Material Roughness.png-b8035239680a81b1b6af01233a04f74c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://models/enemies/Large_mech/Large_mech_complete_Material Metallic-Material Roughness.png"
-dest_files=["res://.godot/imported/Large_mech_complete_Material Metallic-Material Roughness.png-f5cee3e53e684d2bf49919f92b7712f8.s3tc.ctex"]
+source_file="res://content/art/textures/enemies/large_mech/Large_mech_complete_Material Metallic-Material Roughness.png"
+dest_files=["res://.godot/imported/Large_mech_complete_Material Metallic-Material Roughness.png-b8035239680a81b1b6af01233a04f74c.s3tc.ctex"]
 
 [params]
 

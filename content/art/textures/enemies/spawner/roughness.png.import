@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coxr25o53l2ln"
-path.s3tc="res://.godot/imported/roughness.png-cc9d56af3a7c4443eb80900bca0fe9bd.s3tc.ctex"
+path.s3tc="res://.godot/imported/roughness.png-1c85b2840bffa165642d7e2f4fc5b6e2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/enemies/spawner/baked_textures/roughness.png"
-dest_files=["res://.godot/imported/roughness.png-cc9d56af3a7c4443eb80900bca0fe9bd.s3tc.ctex"]
+source_file="res://content/art/textures/enemies/spawner/roughness.png"
+dest_files=["res://.godot/imported/roughness.png-1c85b2840bffa165642d7e2f4fc5b6e2.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccoq2iekdxmc7"
-path.s3tc="res://.godot/imported/normal.png-72c3a5b299031f5549d1d08857f5d507.s3tc.ctex"
+path.s3tc="res://.godot/imported/normal.png-357217adefe55e254f70cae20a562af9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/enemies/small_mech/normal.png"
-dest_files=["res://.godot/imported/normal.png-72c3a5b299031f5549d1d08857f5d507.s3tc.ctex"]
+source_file="res://content/art/textures/enemies/small_mech/normal.png"
+dest_files=["res://.godot/imported/normal.png-357217adefe55e254f70cae20a562af9.s3tc.ctex"]
 
 [params]
 

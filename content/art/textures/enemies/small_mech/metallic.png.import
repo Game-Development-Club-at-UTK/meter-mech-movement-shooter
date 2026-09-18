@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mjktyc3sumy2"
-path="res://.godot/imported/metallic.png-59153a4fc90b168235e816acaaa538b4.ctex"
+path="res://.godot/imported/metallic.png-0518f198b04df3f89c1cec307be25400.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/enemies/small_mech/metallic.png"
-dest_files=["res://.godot/imported/metallic.png-59153a4fc90b168235e816acaaa538b4.ctex"]
+source_file="res://content/art/textures/enemies/small_mech/metallic.png"
+dest_files=["res://.godot/imported/metallic.png-0518f198b04df3f89c1cec307be25400.ctex"]
 
 [params]
 

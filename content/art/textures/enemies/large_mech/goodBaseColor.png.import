@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tga88qs1vpg3"
-path="res://.godot/imported/goodBaseColor.png-ded0037df583d15b7f1bb8894d6200ba.ctex"
+path="res://.godot/imported/goodBaseColor.png-b5b9629e99ea4f13bc81a894518470bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/enemies/Large_mech/goodBaseColor.png"
-dest_files=["res://.godot/imported/goodBaseColor.png-ded0037df583d15b7f1bb8894d6200ba.ctex"]
+source_file="res://content/art/textures/enemies/large_mech/goodBaseColor.png"
+dest_files=["res://.godot/imported/goodBaseColor.png-b5b9629e99ea4f13bc81a894518470bf.ctex"]
 
 [params]
 
